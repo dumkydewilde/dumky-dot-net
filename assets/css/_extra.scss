@@ -1,0 +1,30 @@
+a.posts-list-item-title {
+    font-size: 1.2em;
+}
+
+.posts-list-item-description-continue-reading {
+    display: inline-block;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.posts-list-item-description-meta .reading-time {
+    font-size: 0.8em;
+}
+
+.post-list-item-tags-list {
+    display: inline-block;
+}
+
+.highlight>pre {
+    border-left: 0px !important;
+}
+
+div.posts-list-item-description-meta {
+    margin-top: 1em;
+}
+
+a.tag {
+    color: $lightest-color;
+}
+

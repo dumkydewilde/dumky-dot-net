@@ -1,0 +1,38 @@
+---
+title: "Why you should stop using Google Analytics (as we know it)"
+date: "2019-12-02"
+categories: 
+  - "blog"
+tags: 
+  - "analytics"
+  - "google-analytics"
+  - "gtm"
+  - "measurement"
+  - "tracking"
+description: "Google Analytics has grown to be the most common means of tracking web behaviour since its launch in 2005. However, the tool itself hasn’t really been updated since the launch of its ‘Universal Analytics’ in 2012. That’s almost eight years ago, and eight years is a long time in the online world. Now might just be the right time to ditch the good, old Analytics and start using, yes, Google Analytics."
+---
+
+_Or why GA's Web + App property with its event tracking framework is the future of web analytics._
+
+Tell me, what do you do on the web? I promise I’ll be all GDPR and CCPA compliant about it and won’t tell anyone. But seriously, what do you do? Do you buy clothes online? Groceries? Do you read The New York Times? Or just watch videos on Reddit and Facebook? Do you look for jobs or look for people to fill your job openings? 
+
+There are a million different things to do online and we’ve come a long way since static content and [blinking GIFs](https://knowyourmeme.com/memes/hampster-dance) on computers the size of a baby elephant was all we had —yes I’m showing my age here. Yet interestingly enough, the one thing that hasn’t changed since then is the way we measure the web. Google Analytics has grown to be the most common means of tracking web behaviour since its launch in 2005. However, the tool itself hasn’t really been updated since the launch of its ‘Universal Analytics’ in 2012. That’s almost eight years ago, and eight years is a long time in the online world. Now might just be the right time to ditch the good, old Analytics and start using, yes, Google Analytics. This is a story about why the [new Google Analytics (Web + App)](https://www.blog.google/products/marketingplatform/analytics/new-way-unify-app-and-website-measurement-google-analytics/) is so conceptually different from the existing Google Analytics that it might be worth restructuring your entire analytics approach. Hear me out if you will.
+
+Google Analytics may not have changed over the last eight years, but what has changed is the way the online world has become intertwined with our lives. I’m not complaining about Google Analytics as a great free tool to track your webshop performance and tying that back to your Google Ads. What I am complaining about is the fact that we have let Google Analytics enforce a system of ‘sessions’ and ecommerce upon us to awkwardly fit our businesses into, instead of considering our business goals and finding a measurement and tracking approach to match that. Let me give you a few examples of which I may or may not have been guilty myself.
+
+- For a site with job postings I’ve seen the ecommerce implementation (with concepts like ‘product impressions’ and ‘add to cart’) being used to track not products, but jobs as they flow through a fictitious checkout funnel until the job is ‘sold’.
+- For a news site I’ve seen a similar implementation but here the articles were seen as ‘products’ and ‘sold’ as ‘scores’ to keep a tally of what you’ve read. This would then show up as $$’s in Google Analytics.
+- For a mobile app from a large retailer we decided to just ignore the data because it couldn’t be fit into their existing analytics dashboard that would only work with pageviews. Campaign decisions were then made based on how many ‘pageviews’ came from specific campaigns.
+
+So why do we —still— do this? Because Google Analytics is the devil we know and as cheap as it gets even when we take into account all the hours spent trying to come up with weird ways to fit a business into an analytics setup made for ecommerce. But I’m here to tell you this is the end of an era. For [all the news about the new App + Web setup in Google Analytics](https://www.deptagency.com/fromourdepsters/analysing-web-and-app-data-together-in-google-analytics/), most accounts have failed to acknowledge that this is a conceptual change more than a change in features. 
+
+The new App + Web forces you to think not about pageviews and sessions but about _relevant events and user attributes_ for your business. What does that mean though? It means that you can track the journey of your user through the interactions that are relevant for the app, site or product that you have built. It means that you can show the path between push messages on a smartphone, the various steps in configuring a custom shoe, registering for an event or chatting about the status of an order. To the customer these were already obviously linked together, in your analytics setup they were not so obviously linked or not at all.
+
+That means that if you’re anything but a webshop or corporate, information only, site, this is useful for you. Traditionally publishers and content heavy sites, lead generation sites, subscription sites, online courses, social platforms or combinations of those did not fit well into the Google Analytics framework. Let me give you a few use cases of how this event-driven approach can work.
+
+- _Product Analytics_:  
+    Let’s say you’ve built a note taking tool. Event tracking means you can track when users create a note, view a note, share a note with friends, edit a note, use a merging function. Everything is a separate event with custom parameters like the note ID, the note name, note creation date. Maybe the user has custom attributes too, like the number of notes the user currently has, the number of notes they’ve shared. If a user sees an error you can track the location of that error, the error message, the note ID where it happened, the device and use that for debugging. 
+- _Content sites:_Are you a publisher with (online) subscriptions? Instead of being forced into an ecommerce product you can track subscription events as they occur like monthly renewals or upgrades to new plans. Or maybe you want to just track posts viewed on large archive pages with multiple posts or look at how posts for different authors are doing. Instead of firing one pageview it makes more sense to track posts that have actually been viewed or post snippets that have been viewed and clicked on. Maybe a user saw a push notification for an interesting article and then went on to upgrade their plan on the website, that journey consists of a specific path of separate events that you can now tie together and map out.
+- _Social platforms:_Whether it’s a comment section on your blog, reviews on your products or a full-blown dating site. People sharing information on a platform was not a suitable use case for traditional analytics. The event tracking conceptual framework allows you to think about how features are being used: is the search function used? Has someone started a chat? What products have they reviewed and what is their average rating? Have they used the app recently? What navigation options are used most?
+
+Of course lots of sites have combinations of all of the above and more, but that’s exactly the flexibility that an event-driven framework allows for. The hard part now is not fitting your business into the tool, but deciding what paths are important to you and how you want to leverage the audiences and outcomes of those paths. Google has vowed to support GA throughout 2020, but they have not suggested anything about what happens after that. In either case this is a chance to get ahead of your competition by reshaping your business to think about how the events on your user’s paths match your business goals and start measuring them accordingly. It’s time to say goodbye to the old Google Analytics and hello to a new way of thinking.

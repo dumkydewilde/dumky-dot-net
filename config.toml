@@ -1,0 +1,51 @@
+baseURL = "https://www.dumky.net"
+languageCode = "en-uk"
+title = "Beyond Measure"
+theme = "m10c"
+paginate = 6
+
+[permalinks]
+    posts = "/posts/:title/"
+
+[params]
+    author = "Dumky de Wilde"
+    description = "Hey! My name is Dumky, I'm an analytics engineer and like to talk about Google Tag Manager, analytics, web site security, javascript, automated testing, online marketing ethics and —every now and then— my philosophy education."
+    avatar = "profile.png"
+    menu_item_separator = "|"
+    [params.style]
+        darkestColor = "#131416"
+        darkColor = "#26282C"
+        lightColor = "#fff4f4"
+        lightestColor = "#fff4f4"
+        primaryColor = "#ffdccc"
+    [[params.social]]
+        icon = "github"
+        name = "Github"
+        url = "https://github.com/dumkydewilde"
+    
+    [[params.social]]
+        icon = "twitter"
+        name = "Twitter"
+        url = "https://twitter.com/dumkydewilde"
+    
+    [[params.social]]
+        icon = "linkedin"
+        name = "LinkedIn"
+        url = "https://www.linkedin.com/in/dumkydewilde/"
+
+[menu]
+    [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+
+    [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+
+[markup]
+  [markup.highlight]
+    guessSyntax = true
+    style = "dracula"
+    tabWidth = 4
