@@ -1,4 +1,4 @@
-baseURL = "https://www.dumky.net"
+baseURL = "/"
 languageCode = "en-uk"
 title = "Beyond Measure"
 theme = "m10c"

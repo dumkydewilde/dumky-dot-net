@@ -1,6 +1,6 @@
-/public
-/node_modules
-/resources
+public/
+node_modules/
+resources/
 
 #OS
 .DS_Store
