@@ -1,10 +1,8 @@
 ---
 title: "Using Puppeteer to automate your google analytics testing"
 date: "2020-04-13"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
+  - "howto"
   - "gcp"
   - "google-analytics"
   - "puppeteer"

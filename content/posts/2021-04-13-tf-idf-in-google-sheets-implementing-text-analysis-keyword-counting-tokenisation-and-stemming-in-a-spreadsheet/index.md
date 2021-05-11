@@ -1,10 +1,8 @@
 ---
 title: "Tf-Idf in Google Sheets: implementing text analysis, keyword counting, tokenisation and stemming in a spreadsheet"
 date: "2021-04-13"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
+  - "howto"
   - "google-sheets"
   - "javascript"
   - "text-analysis"

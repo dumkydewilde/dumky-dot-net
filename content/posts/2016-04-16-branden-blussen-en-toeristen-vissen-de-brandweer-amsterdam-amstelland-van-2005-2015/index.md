@@ -1,14 +1,10 @@
 ---
 title: "Branden blussen en toeristen vissen: De brandweer Amsterdam-Amstelland van 2005-2015"
 date: "2016-04-16"
-categories: 
-  - "blog"
-  - "portfolio"
 tags: 
   - "amsterdam"
   - "data"
-  - "visualisatie"
-coverImage: "02-liftopsluiting_amsterdam_2005_2015.png"
+  - "visualisation"
 ---
 
 De Gemeente Amsterdam heeft sinds een paar maanden data van de brandweer Amsterdam-Amstelland [beschikbaar gesteld](http://data.amsterdam.nl/dataset/brandmeldingen-2010-2015). Volgens de omschrijving zou de data set alle meldingen van 2010-2015 bevatten, in de praktijk bevat de data meldingen vanaf 31 maart 2005 tot ongeveer halverwege 2015. Bijna 10 jaar aan branden blussen, dieren redden, en liften openen.

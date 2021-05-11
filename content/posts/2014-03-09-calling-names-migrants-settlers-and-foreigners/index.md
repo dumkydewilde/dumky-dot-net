@@ -1,14 +1,10 @@
 ---
 title: "Calling names: migrants, settlers and foreigners after the 1800s in words and data"
 date: "2014-03-09"
-categories: 
-  - "blog"
 tags: 
-  - "collier"
-  - "exodus"
-  - "immigration"
+  - "Paul Collier"
   - "migration"
-  - "political-science"
+  - "Political Science"
 ---
 
 [![image](images/tumblr_inline_n265x90ifY1rxocyy.png)](https://books.google.com/ngrams/graph?content=settler%2Cmigrant%2Cemigrant%2Cimmigrant%2Cforeigner&case_insensitive=on&year_start=1800&year_end=2008&corpus=15&smoothing=7&share=&direct_url=t4%3B%2Csettler%3B%2Cc0%3B%2Cs0%3B%3Bsettler%3B%2Cc0%3B%3BSettler%3B%2Cc0%3B.t4%3B%2Cmigrant%3B%2Cc0%3B%2Cs0%3B%3Bmigrant%3B%2Cc0%3B%3BMigrant%3B%2Cc0%3B%3BMIGRANT%3B%2Cc0%3B.t4%3B%2Cemigrant%3B%2Cc0%3B%2Cs0%3B%3Bemigrant%3B%2Cc0%3B%3BEmigrant%3B%2Cc0%3B%3BEMIGRANT%3B%2Cc0%3B.t4%3B%2Cimmigrant%3B%2Cc0%3B%2Cs0%3B%3Bimmigrant%3B%2Cc0%3B%3BImmigrant%3B%2Cc0%3B.t4%3B%2Cforeigner%3B%2Cc0%3B%2Cs0%3B%3Bforeigner%3B%2Cc0%3B%3BForeigner%3B%2Cc0)

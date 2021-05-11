@@ -1,8 +1,6 @@
 ---
 title: "Why you should stop using Google Analytics (as we know it)"
 date: "2019-12-02"
-categories: 
-  - "blog"
 tags: 
   - "analytics"
   - "google-analytics"

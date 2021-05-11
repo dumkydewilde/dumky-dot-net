@@ -1,16 +1,12 @@
 ---
 title: "GTM Custom Templates: how to think about building your own"
 date: "2019-06-24"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
   - "analytics"
   - "code"
   - "gtm"
   - "measurement"
   - "tracking"
-coverImage: "Screenshot-2019-06-24-at-21.28.55.png"
 ---
 
 _Just looking for the template? You can find it_ [_on Github_](https://github.com/dumkydewilde/gtm-quality-traffic-template)_._

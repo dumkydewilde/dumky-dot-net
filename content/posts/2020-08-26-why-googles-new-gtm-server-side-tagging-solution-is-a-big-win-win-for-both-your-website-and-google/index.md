@@ -1,8 +1,6 @@
 ---
 title: "Why Google’s new GTM server-side tagging solution is a big win-win for both your website and Google."
 date: "2020-08-26"
-categories: 
-  - "blog"
 tags: 
   - "google"
   - "gtm"

@@ -1,8 +1,6 @@
 ---
 title: "Too Much Information Syndrome (And A Cure)"
 date: "2017-04-14"
-categories: 
-  - "blog"
 tags: 
   - "data"
   - "design"

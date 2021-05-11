@@ -1,21 +1,11 @@
 ---
 title: "Story Asymmetry: 4 Ways You're Missing Out on Customer Experience"
 date: "2013-11-03"
-categories: 
-  - "blog"
 tags: 
-  - "anecdote"
-  - "crm"
+  - "CRM"
   - "customer"
-  - "design"
-  - "experience"
-  - "fail"
-  - "failure"
-  - "responsibility"
-  - "story"
+  - "UX"
   - "storytelling"
-  - "usability"
-  - "ux"
 ---
 
 _“A very good morning ladies and gentlemen. I’m happy to announce that we have safely reached our destination, The Hague. All that’s left for me to do is to wish you all a fulfilling and productive day! From here on, you’re on your own.”_  

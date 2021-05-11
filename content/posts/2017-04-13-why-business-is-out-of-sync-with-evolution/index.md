@@ -1,13 +1,10 @@
 ---
 title: "Why business is out of sync with evolution"
 date: "2017-04-13"
-categories: 
-  - "blog"
 tags: 
   - "data"
-  - "innovatie"
-  - "organisatie"
-coverImage: "20170406-football-map-colorfull.png"
+  - "innovation"
+  - "business"
 ---
 
 [![](images/20170406-football-map-colorfull-1024x384.png)](http://www.dumkydewilde.nl/wp-content/uploads/2017/04/20170406-football-map-colorfull.png)

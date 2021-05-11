@@ -1,16 +1,9 @@
 ---
 title: "What!? How ... ? But Why!? Seven Ways to Ask Better Questions"
 date: "2013-11-10"
-categories: 
-  - "blog"
 tags: 
-  - "conversation"
   - "howto"
-  - "interview"
-  - "negotiation"
-  - "philosophy"
   - "questions"
-  - "tips"
 ---
 
 ![image](images/tumblr_inline_mw1yyiCwx51rxocyy.jpg)

@@ -28,3 +28,33 @@ a.tag {
     color: $lightest-color;
 }
 
+.app-header-avatar {
+    border-width: 0;
+  }
+
+.page-item {
+  display: inline-block;
+  .page-link {
+    display: block;
+    padding: 0.285em 0.8em;
+  }
+
+  &.active {
+    .page-link {
+      color: $lightest-color;
+      border-radius: 2em;
+      background: $darkest-color;
+    }
+  }
+}
+
+.posts-list-item {
+    list-style: none;
+    padding: 1em 0;
+    font-size: 1.25em;
+}
+
+html {
+    line-height: 1.5;
+  }
+

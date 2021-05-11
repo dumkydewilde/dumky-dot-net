@@ -1,14 +1,11 @@
 ---
 title: "De Pizza Hawaii: Een Management Wonder"
 date: "2016-10-09"
-categories: 
-  - "blog"
 tags: 
-  - "innovatie"
+  - "innovation"
   - "lean"
   - "management"
-  - "procesoptimalisatie"
-coverImage: "pizza-hawaii-proces.png"
+  - "business"
 ---
 
 ![processtappen voor het maken van een pizza Hawaii](images/pizza-hawaii-proces-1024x512.png)Mijn vader woont in Duitsland. Onderweg naar hem ruik ik de geur van diepvriespizza. De Dr. Oetker fabriek waar de _Ristorante_ pizza’s vandaan komen staat enkele kilometers van zijn huis vandaan. Het is een nietszeggende vierkante doos, zoals zoveel fabrieken, alleen te onderscheiden door het Dr. Oetker logo aan de buitenkant. Aan het eind van hun korte leven worden de pizza’s opgewarmd in de oven en verorberd op de bank voor de televisie of met een stuk of wat bij elkaar op een feestje, naast de tafel met drank. Je zou het niet zeggen, maar de mooiste diepvriespizza, de pizza Hawaii, is het resultaat van tientallen jaren innovatie en procesoptimalisatie. Denk er maar eens over na. Tot begin 19e eeuw werd bijna al het voedsel gegeten op een paar kilometer afstand van waar het werd geproduceerd. De melk, de ham, de kaas, en natuurlijk de ananas, tot enkele tientallen jaren geleden was het überhaupt niet mogelijk om al die ingrediënten tegelijkertijd bij elkaar te krijgen zonder dat ze bedierven —laat staan dat er duizenden pizza’s per jaar van geproduceerd konden worden.

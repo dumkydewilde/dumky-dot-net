@@ -1,15 +1,11 @@
 ---
 title: "Wat de smaak van wijn écht bepaalt"
 date: "2015-06-19"
-categories: 
-  - "blog"
 tags: 
-  - "filosofie"
-  - "framing"
+  - "philosophy"
   - "marketing"
-  - "psychologie"
+  - "psychology"
   - "storytelling"
-  - "wijn"
 ---
 
 “Wat bepaalt de smaak van de wijn?” Die vraag kreeg ik onlangs, samen met een stel vrienden, op een wijnproeverij. “De druif”, riep iemand. “De grond en weersomstandigheden.” “Het vat!” Allemaal erg belangrijk voor de smaak van de wijn, maar mijn eerste ingeving was: de prijs. Waarom? De smaak van de wijn wordt namelijk niet alleen bepaald door de wijn, maar bovenal door wie hem proeft. En dat is te beïnvloeden. De rauwe input van onze zintuigen wordt op weg door de hersenen in hapklare stukjes gehakt die voor ons te begrijpen zijn. Dat betekent dat we niet overprikkeld raken door geur, smaak, temperatuur, licht, en omgeving, maar dat we de stimuli ervaren als betekenisvolle informatie over de wereld. Onze hersenen helpen ons in het zoeken naar patronen om de wereld begrijpelijk te maken en zo snel actie te kunnen ondernemen.

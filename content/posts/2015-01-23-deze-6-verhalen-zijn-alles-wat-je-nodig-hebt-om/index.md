@@ -1,14 +1,10 @@
 ---
 title: "Deze 6 verhalen zijn alles wat je nodig hebt om een storyteller te worden"
 date: "2015-01-23"
-categories: 
-  - "blog"
 tags: 
-  - "filosofie"
-  - "invloed"
-  - "psychologie"
+  - "philosophy"
+  - "psychology"
   - "storytelling"
-  - "verhaal"
 ---
 
 Er is al te veel informatie in deze wereld. Niemand heeft behoefte aan meer feiten. Serieus, TL;DR is ons levensmotto, want ‘Too Long; Didn’t Read’ is al te veel moeite om uit te schrijven. Feiten gaan je niet helpen om een berg te verzetten, dat lukt je alleen met geloof en vertrouwen. Maar waarom zou ik je vertrouwen als ik je niet ken?

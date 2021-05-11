@@ -1,15 +1,12 @@
 ---
 title: "ITP 2.1: Why you won’t make your advertising targets, but will finally understand how cookies work"
 date: "2019-05-16"
-categories: 
-  - "blog"
 tags: 
   - "data"
   - "itp"
   - "marketing"
   - "privacy"
   - "tracking"
-coverImage: "ales-nesetril-734016-unsplash.jpg"
 ---
 
 _This post was also published on [the Dept blog](https://www.deptagency.com/fromourdepsters/itp-2-1-why-you-wont-make-your-advertising-targets-but-will-finally-understand-how-cookies-work/) on May 8th, 2019_

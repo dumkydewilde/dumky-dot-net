@@ -1,9 +1,6 @@
 ---
 title: "Analytics and tag testing with Cypress"
 date: "2020-04-06"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
   - "analytics"
   - "cypressio"

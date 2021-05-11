@@ -1,15 +1,11 @@
 ---
 title: "3 modellen om te innoveren met story telling"
 date: "2015-01-31"
-categories: 
-  - "blog"
-  - "portfolio"
 tags: 
   - "business"
-  - "cultuur"
-  - "innovatie"
-  - "organisatie"
-  - "pitch"
+  - "culture"
+  - "innovation"
+  - "organisation"
   - "storytelling"
 ---
 

@@ -1,13 +1,10 @@
 ---
 title: "Innovating on Giants' Shoulders"
 date: "2017-09-24"
-categories: 
-  - "blog"
 tags: 
   - "innovation"
-  - "organisations"
+  - "business"
   - "strategy"
-coverImage: "800px-France_in_XXI_Century._Robot_orchestra.jpg"
 ---
 
 ![Image from the 19th century series on the world in the year 2000](images/800px-France_in_XXI_Century._Robot_orchestra.jpg)

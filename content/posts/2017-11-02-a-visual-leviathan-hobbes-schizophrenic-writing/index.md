@@ -1,10 +1,13 @@
 ---
 title: "A Visual Leviathan: Hobbes' Schizophrenic Writing"
 date: "2017-11-02"
-categories: 
-  - "blog"
-  - "portfolio"
-coverImage: "Screen-Shot-2017-11-02-at-17.56.10.png"
+tags:
+  - "Thomas Hobbes"
+  - "visualisation"
+  - "data"
+  - "text-analysis"
+  - "tf-idf"
+  - "philosophy"
 ---
 
 I have spent many hours of my life devoted to studying Thomas Hobbes' book _Leviathan._ It was published in 1651 and is considered a starting point of modern political philosophy. It is a fascinating book, I even wrote a thesis on it, but one thing had always nagged me. You see, Hobbes writes very concise and structured arguments. He starts out by considering how people used to live before we had larger societies, this is where the 'solitary, poor, nasty, brutish and short' part comes in —Hobbes wasn't a fan of prehistoric human life it seem. He then goes on to consider how that 'natural' state influences and creates a framework for the justification of a centralised ruler, the _leviathan_. We subject ourselves to the leviathan —a medieval king basically— because we'll end up in a better place than the prehistoric chaos. That conclusion is drawn halfway through the book though, and after that is when things get messy. Hobbes then basically starts a new book on 'The Kingdome of God'.

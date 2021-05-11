@@ -1,8 +1,6 @@
 ---
 title: "Cookie Consent: A Simple Checklist for Compliance"
 date: "2021-04-07"
-categories: 
-  - "blog"
 tags: 
   - "avg"
   - "consent"

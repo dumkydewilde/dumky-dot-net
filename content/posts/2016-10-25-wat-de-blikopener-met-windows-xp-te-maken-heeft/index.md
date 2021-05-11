@@ -1,14 +1,12 @@
 ---
 title: "Wat de blikopener met Windows XP te maken heeft"
 date: "2016-10-25"
-categories: 
-  - "blog"
 tags: 
-  - "bureaucratie"
-  - "cultuur"
-  - "innovatie"
-  - "organisatie"
-  - "overheid"
+  - "bureaucracy"
+  - "culture"
+  - "innovation"
+  - "business"
+  - "government"
 coverImage: "yes-we-can-opener.png"
 ---
 

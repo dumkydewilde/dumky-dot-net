@@ -1,15 +1,13 @@
 ---
 title: "Overheidsmanager? Dit is waarom je volgende ICT-project weer te duur, te laat, en niet gebruiksvriendelijk is"
 date: "2016-10-09"
-categories: 
-  - "blog"
 tags: 
   - "agile"
-  - "cultuur"
+  - "culture"
   - "development"
-  - "ict"
+  - "IT"
   - "lean"
-  - "overheid"
+  - "government"
 ---
 
 ![Netflix vroeger en nu](images/netflix-old-new-1024x329.jpg)Een van mijn hobby’s is om oude versies van websites te bekijken. Neem bijvoorbeeld Netfllix, eind jaren ‘90. De website was niet meer dan een rare banner met glimmende DVD’s, een plaatje van een paar films en een brievenbus. Het concept was: we sturen mensen een DVD per post, die kijken ze, en dan sturen ze de DVD weer terug. Ik herhaal het nog een keer: je ‘huurt’ online een film, je _wacht_ totdat die _met de post_ bezorgd wordt, en dan moet je zelf de film weer _terugsturen met de post._ Nu, bijna twintig jaar later heeft Netflix ruim 83 miljoen abonnees wereldwijd. Wat is er gebeurd?

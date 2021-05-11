@@ -1,10 +1,8 @@
 ---
 title: "Measuring with DataLayers, Data Attributes, Meta Tags and Webhooks: When to use what"
 date: "2020-04-19"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
+  - "howto"
   - "datalayer"
   - "development"
   - "dom"

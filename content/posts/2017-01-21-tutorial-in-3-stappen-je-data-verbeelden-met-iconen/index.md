@@ -1,16 +1,11 @@
 ---
 title: "TUTORIAL: In 3 stappen je data verbeelden met iconen"
 date: "2017-01-21"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
   - "data"
   - "design"
-  - "icon"
   - "storytelling"
-  - "visualisatie"
-coverImage: "Slide5-1.png"
+  - "visualisation"
 ---
 
 Hoe enthousiast wordt jij van het cijfer 9? En van 13.5 miljoen? Wat vindt je ervan dat er afgelopen jaar een stijging in de omzet is geweest van 12.3%? Als het aan mij ligt ben ik ondertussen meer geïnteresseerd in de manier waarop de beamer aan het plafond is opgehangen als ik nog niet in slaap gevallen ben... Als je echt impact wil maken met je verhaal moet je betekenis geven aan je data. Een cijfer op zichzelf spreekt niet tot de verbeelding, totdat je het betekenis geeft. Je kunt natuurlijk de cijfers kiezen op basis van het verhaal dat je wil vertellen — [Mailchimp doet dat mooi in hun jaarverslagen](https://mailchimp.com/2016/). Maar soms moet je het doen met de data die je hebt. Gelukkig is er een makkelijke manier om je data levendiger te maken, betekenisvoller.[![](images/Slide1-1-1024x576.png)](http://www.dumkydewilde.nl/wp-content/uploads/2017/01/Slide1-1.png)

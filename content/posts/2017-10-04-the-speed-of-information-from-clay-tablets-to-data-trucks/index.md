@@ -1,16 +1,14 @@
 ---
 title: "The speed of information: from clay tablets to data trucks"
 date: "2017-10-04"
-categories: 
-  - "blog"
 tags: 
   - "architecture"
   - "bureaucracy"
   - "open-office"
-  - "organisations"
+  - "business"
   - "productivity"
   - "work"
-coverImage: "sn_snowmobile_2.jpg"
+  - "information"
 ---
 
 What is the fastest way to transfer 100 petabytes to the cloud—that is to say, about 200 thousand times your laptop’s capacity? Who has that much information, you ask? Plenty of companies with years of digital documents, movie studios, government agencies, you name it. If you think your fiberoptic cable will help you out, think again. At this size and even with the fastest connection we are still talking multiple years of uploading data\[note\]You can play around with [this download speed calculator](http://www.t1shopper.com/tools/calculate/downloadcalculator.php)\[/note\]. So what is the fastest way? It’s driving. [Amazon has a large truck](https://www.wired.com/2016/12/amazons-snowmobile-actually-truck-hauling-huge-hard-drive/) that functions as a single giant harddrive which will upload your archive to the cloud in less than 10 days. With so much information wirelessly available we tend to forget that that information, or the data behind it does actually have a physical component. A truck like that shows you exactly that we have certainly not left the physical realm yet and that the logistics of connecting information and people will not be going away soon.

@@ -1,15 +1,11 @@
 ---
 title: "De agile overheid: bureaucratie in de 21e eeuw"
 date: "2016-06-17"
-categories: 
-  - "blog"
 tags: 
   - "agile"
-  - "bureaucratie"
-  - "innovatie"
-  - "overheid"
-  - "product-ontwikkeling"
-  - "scrum"
+  - "bureaucracy"
+  - "innovation"
+  - "government"
 ---
 
 _“Fail fast, fail often, fail forward.”_ Het is het credo van de _lean startups_, de softwarebedrijfjes, de app-ontwikkelaars, de _crowd-funded_ makers. En het werkt. De snelheid waarmee een product op de markt komt is extreem hoog, de producten sluiten aan op de wensen van klanten, en niet de omslag kunnen maken naar deze _agile_ manier van werken betekent einde verhaal. Spotify is het schoolvoorbeeld van _agile_ werken: autonome teams die aan kleine onderdelen van het geheel werken; prototypes testen op kleine groepen en dan pas verder; vertrouwen in het proces, focus op de klant; en bovenal: fouten en successen, alles wordt gedeeld.

@@ -1,16 +1,11 @@
 ---
 title: "Een jaar in stappen"
 date: "2016-02-03"
-categories: 
-  - "blog"
-  - "portfolio"
 tags: 
   - "data"
   - "heatmap"
-  - "matplotlib"
-  - "persoonlijk"
   - "python"
-  - "visualisatie"
+  - "visualisation"
 ---
 
 Eind 2014 kocht ik de iPhone 6. Die heeft sinds die tijd stilletjes mijn stappen geteld. En nu 2015 voorbij is heb ik een jaar aan data over mijn activiteit. Een mooi moment om eens terug te kijken. Apple's Health App heeft een mooi gekleurd hartje en een paar leuke grafiekjes, maar heel veel informatie is er niet echt uit te lezen ondanks de belofte van een "innovative new way to use your health and ﬁtness information." Waar ik in geïnteresseerd ben is of er patronen te herkennen zijn in een jaar bewegen.

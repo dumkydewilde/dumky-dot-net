@@ -1,13 +1,10 @@
 ---
 title: "Feiten spreken niet voor zichzelf: perspectieven in visuele communicatie"
 date: "2016-05-12"
-categories: 
-  - "blog"
 tags: 
-  - "psychologie"
+  - "psychology"
   - "ux"
-  - "visualisatie"
-coverImage: "Screen-Shot-2016-05-11-at-08.43.42.png"
+  - "visualisation"
 ---
 
 [![Het verschil tussen niet of wel vetgedrukt cijfers in een cijferreeks.](images/Screen-Shot-2016-05-11-at-08.43.42-1024x576.png)](http://www.dumkydewilde.nl/wp-content/uploads/2016/05/Screen-Shot-2016-05-11-at-08.43.42.png)

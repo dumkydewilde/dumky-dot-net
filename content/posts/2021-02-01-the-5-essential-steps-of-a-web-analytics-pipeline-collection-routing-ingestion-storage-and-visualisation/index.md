@@ -1,8 +1,6 @@
 ---
 title: "The 5 essential steps of a (web) analytics pipeline: collection, routing, ingestion, storage and visualisation"
 date: "2021-02-01"
-categories: 
-  - "blog"
 tags: 
   - "analytics"
   - "data"

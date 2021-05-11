@@ -1,8 +1,6 @@
 ---
 title: "8 ways to optimise Google Tag Manager (GTM) for speed and performance"
 date: "2019-09-30"
-categories: 
-  - "blog"
 tags: 
   - "analytics"
   - "gtm"

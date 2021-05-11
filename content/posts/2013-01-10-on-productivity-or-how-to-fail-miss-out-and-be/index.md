@@ -1,13 +1,8 @@
 ---
 title: "On Productivity or: How to Fail, Miss Out and Be Happy about it"
 date: "2013-01-10"
-categories: 
-  - "blog"
 tags: 
-  - "energy"
-  - "links"
   - "productivity"
-  - "resource"
   - "sleep"
   - "work"
 ---

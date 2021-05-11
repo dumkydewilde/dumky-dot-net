@@ -1,6 +1,10 @@
 ---
 title: "Hoe ziet de inhoudsopgave van de toekomst er uit?"
 date: "2016-06-08"
+tags:
+    - "data"
+    - "classification"
+    - "content"
 ---
 
 [![Plinius the Elder quote](images/quote-plinius-the-elder.png)](http://www.dumkydewilde.nl/wp-content/uploads/2016/06/quote-plinius-the-elder.png)

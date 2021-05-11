@@ -1,15 +1,11 @@
 ---
 title: "Tutorial: In 4 stappen van data naar visuele impact"
 date: "2017-01-16"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
   - "data"
-  - "immigration"
   - "migration"
   - "storytelling"
-  - "visualisatie"
+  - "visualisation"
 coverImage: "Slide9.png"
 ---
 

@@ -1,13 +1,9 @@
 ---
 title: "The Case of The Mistaken Philosopher: How Aristotle didn't write a quote about talents and vocation."
 date: "2017-09-29"
-categories: 
-  - "blog"
 tags: 
   - "aristotle"
   - "philosophy"
-  - "rant"
-coverImage: "your-talents-and-needs-of-the-world.png"
 ---
 
 _Spoiler alert: it wasn't Aristotle who said "Where the needs of the world and your talents cross, there lies your vocation." Read on to get the full story._

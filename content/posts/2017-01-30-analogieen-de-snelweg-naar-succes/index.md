@@ -1,16 +1,12 @@
 ---
 title: "Analogieën: de snelweg naar succes"
 date: "2017-01-30"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
-  - "analogie"
-  - "organisatie"
-  - "psychologie"
+  - "analogy"
+  - "business"
+  - "psychology"
   - "storytelling"
-  - "visualisatie"
-coverImage: "Slide2-2.png"
+  - "visualisation"
 ---
 
 Als ik zeg dat ik een concept voor je heb dat een snelweg naar succes is. Wil je aandacht van je publiek? Hier is een beproefde methode om de code te kraken. Waar denk je aan? Zie je het voor je? Het is de analogie, een van de krachtigste communicatiemiddelen. Aandacht is niet een code, het is mentale staat van mensen. Succes is niet te bereiken via een snelweg of wat voor weg dan ook. Toch snappen we gelijk wat er bedoeld wordt. Ik weet dat een snelweg betekent dat ik sneller kan rijden en sneller op mijn bestemming kan komen. Als ik de ‘bestemming’ succes heb, wil ik daar natuurlijk zo snel mogelijk zijn. De elementen —een weg, een carrière— zijn onderling verschillend, maar ze delen "een gemeenschappelijk patroon van relaties”1. We kunnen ons voorstellen dat succes een beginpunt en een eindpunt heeft en dat we de tijd daartussen zo snel mogelijk af willen leggen om bij ons eindpunt te komen, in dit geval het verschil dat we willen overbruggen —nog zo’n analogie— tussen onze huidige situatie en de gewenste situatie van succes. Een ding valt al gelijk op: Het is lastig om abstracte concepten als succes uit te leggen zonder analogie.[![](images/Slide1-2-1024x576.png)](http://www.dumkydewilde.nl/wp-content/uploads/2017/01/Slide1-2.png)

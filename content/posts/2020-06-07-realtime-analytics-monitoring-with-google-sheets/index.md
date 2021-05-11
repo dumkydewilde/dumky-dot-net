@@ -1,10 +1,8 @@
 ---
 title: "Real Time Analytics Monitoring with Google Sheets"
 date: "2020-06-07"
-categories: 
-  - "blog"
-  - "tutorials"
 tags: 
+  - "howto"
   - "analytics"
   - "api"
   - "google-analytics"

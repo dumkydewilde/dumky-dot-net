@@ -1,10 +1,12 @@
 ---
 title: "Welke online marketing tools gebruiken Nederlandse websites?"
 date: "2016-07-03"
-categories: 
-  - "blog"
-  - "portfolio"
-coverImage: "online_marketing_tools_2016-1.png"
+tags:
+  - "marketing"
+  - "visualisation"
+  - "python"
+  - "tools"
+
 ---
 
 Onlangs was ik me aan het oriënteren op de inzet van een aantal tools voor het optimaliseren van een website. De eerste vraag is natuurlijk wat wil je precies bereiken? Wil je alleen bezoekersgedrag bijhouden? wil je A/B-tests gaan doen? Wil je klanten in hun hele 'journey' volgen met een data management platform (DMP)? Ter inspiratie keek ik even op een aantal andere websites, maar het rechtsklikken en '_inspect'_ wordt al snel vermoeiend. Ik was benieuwd wat de meest gebruikte tools zijn op Nederlandse sites en dan gaan we het met rechtsklikken niet redden.

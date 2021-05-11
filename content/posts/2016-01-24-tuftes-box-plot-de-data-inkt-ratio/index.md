@@ -1,9 +1,10 @@
 ---
 title: "Tufte's box plot: De data-inkt ratio"
 date: "2016-01-24"
-categories: 
-  - "blog"
-  - "portfolio"
+tags: 
+  - "visualisation"
+  - "Edward Tufte"
+  - "data"
 ---
 
 In zijn boek _The Visual Display of Quantative Information_ gaat Edward Tufte in op een aantal best practices in de data visualisatie. Een daarvan is wat hij noemt de data-inkt ratio: hoeveel van de inkt op de pagina draagt daadwerkelijk bij aan het overbrengen van informatie? Heb je die 3D-grafiek met knipperende discokleuren echt nodig? Nee, waarschijnlijk niet, maar hoeveel kun je nou echt weglaten zonder dat er informatie verloren gaat? Meer dan je denkt. Laten we eens stapsgewijs kijken naar een van de voorbeelden van Tufte, de box-plot.
