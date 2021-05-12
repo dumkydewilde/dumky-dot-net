@@ -13,6 +13,7 @@ paginate = 6
     avatar = "profile.png"
     menu_item_separator = "|"
     gtm_id = "GTM-WP7XMQL"
+    gtm_datalayer = "basic"
     [params.style]
         darkestColor = "#131416"
         darkColor = "#202125"

@@ -7,6 +7,7 @@ tags:
   - "marketing"
   - "privacy"
   - "tracking"
+description: "Last February, Apple introduced version 2.1 of their so-called Intelligent Tracking Prevention (ITP) causing major impact on a number of fields: A/B testing, analytics, affiliate marketing, conversion tracking and most importantly remarketing. The short version is you won’t be able to target Safari users after seven days. The long version takes us back to the internet in the ‘90s and makes you rethink the results of your online ad spend."
 ---
 
 _This post was also published on [the Dept blog](https://www.deptagency.com/fromourdepsters/itp-2-1-why-you-wont-make-your-advertising-targets-but-will-finally-understand-how-cookies-work/) on May 8th, 2019_

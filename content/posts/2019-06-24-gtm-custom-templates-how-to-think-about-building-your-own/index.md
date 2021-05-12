@@ -7,6 +7,7 @@ tags:
   - "gtm"
   - "measurement"
   - "tracking"
+description: "Custom templates are a way to make tag management even more manageable, scalable and secure. GTM’s custom templates can seem very limited, since they’re built on a very restricted, sandboxed version of JavaScript. There's much potential in custom templates, but it helps to think about the fundamentals of tag management when you start building your own custom template. In this post I’ll show you my thinking behind a custom template for building a frequent-flyer style tag to track user behaviour as an attribute."
 ---
 
 _Just looking for the template? You can find it_ [_on Github_](https://github.com/dumkydewilde/gtm-quality-traffic-template)_._

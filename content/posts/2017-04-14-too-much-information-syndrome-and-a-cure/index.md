@@ -5,7 +5,7 @@ tags:
   - "data"
   - "design"
   - "information"
-coverImage: "20170414-too-much-information-protest-crowd.png"
+description: "Humans are built to distinguish signal from noise. We have a general ability to, in an instant, understand what is important and what is not. With more and more distraction and noise heading our way, we need the mental tools to do the heavy lifting for us. Read on to learn about three mental tool that not only help us better understand the world, but also help us make better data visualisations and presentations."
 ---
 
 I believe we are built to distinguish signal from noise. It’s not just the fake news on Facebook, the hipsters on Instagram, or the kittens on YouTube that we are able to filter out (or not…). It is a general ability to, in an instant, understand what is important and what is not. Despite the fact that in recent years the all-encompassing interwebs has created a collective attention deficit disorder, our ability to distinguish signal from noise has not changed. It’s just that there’s more noise and more signal. It’s not something just humans do —though, yes, you are special, but I’ll get to that later. It’s an ability a lot of animals have when we say they can smell fear, or hear danger coming. That ability to filter out the noise has helped us survive for millions of years. I think we can use it even more and even better.
