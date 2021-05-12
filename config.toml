@@ -12,9 +12,10 @@ paginate = 6
     description = "Hey! My name is Dumky, I'm an analytics engineer and like to talk about Google Tag Manager, analytics, web site security, javascript, automated testing, online marketing ethics and —every now and then— my philosophy education."
     avatar = "profile.png"
     menu_item_separator = "|"
+    gtm_id = "GTM-WP7XMQL"
     [params.style]
         darkestColor = "#131416"
-        darkColor = "#26282C"
+        darkColor = "#202125"
         lightColor = "#fff4f4"
         lightestColor = "#fff4f4"
         primaryColor = "#ffdccc"
