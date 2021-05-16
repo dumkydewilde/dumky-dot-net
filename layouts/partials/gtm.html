@@ -1,4 +1,4 @@
-{{- if eq .Site.Params.gtm_datalayer "basic"}}  <script>
+{{- if eq .Site.Params.gtm_datalayer "basic"}}  <script nonce='{{ getenv "HUGO_PARAMS_NONCESECRET" }}'>
 	window.dataLayer = window.dataLayer || [];
 	window.dataLayer.push({
 		'event' : 'pageInfo',
