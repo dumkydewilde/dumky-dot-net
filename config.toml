@@ -10,7 +10,7 @@ paginate = 6
 [params]
     author = "Dumky de Wilde"
     description = "Hey! My name is Dumky, I'm an analytics engineer and like to talk about Google Tag Manager, analytics, web site security, javascript, automated testing, online marketing ethics and —every now and then— my philosophy education."
-    avatar = "profile.png"
+    avatar = "profile.jpg"
     menu_item_separator = "|"
     gtm_id = "GTM-WP7XMQL"
     gtm_datalayer = "basic"
