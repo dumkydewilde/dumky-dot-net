@@ -34,6 +34,6 @@
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'//{{ if .Site.Params.gtm_endpoint}}{{ .Site.Params.gtm_endpoint }}{{ else }}www.googletagmanager.com{{ end }}/gtm.js?id='+i+dl;
 	var n=d.querySelector('[nonce]');
-	n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce'));
+	n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce')) ||n.getAttribute('data-nonce'));
 	f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','{{ .Site.Params.gtm_id }}');</script>{{ end }}{{ end }}
