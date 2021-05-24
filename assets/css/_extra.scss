@@ -1,5 +1,10 @@
 a.posts-list-item-title {
     font-size: 1.2em;
+    font-weight: 100;
+}
+
+.posts-list-item-description-meta {
+    font-size: 0.9em;
 }
 
 .posts-list-item-description-continue-reading {
@@ -8,8 +13,8 @@ a.posts-list-item-title {
     font-size: 0.9em;
 }
 
-.posts-list-item-description-meta .reading-time {
-    font-size: 0.8em;
+.post {
+    font-size: 1.1em;
 }
 
 .post-list-item-tags-list {
@@ -24,28 +29,31 @@ div.posts-list-item-description-meta {
     margin-top: 1em;
 }
 
-a.tag {
-    color: $lightest-color;
-}
-
 .app-header-avatar {
     border-width: 0;
   }
 
-.page-item {
-  display: inline-block;
-  .page-link {
-    display: block;
-    padding: 0.285em 0.8em;
-  }
+a.tag {
+    background-color: $primary-color;
+    color: $lightest-color;
+    border-radius: 5px;
+    text-decoration: none;
+}
 
-  &.active {
-    .page-link {
-      color: $lightest-color;
-      border-radius: 2em;
-      background: $darkest-color;
-    }
-  }
+a.tag:hover {
+    background-color: $darkest-color;
+    color: $lightest-color;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .post-title {
+    color: $primary-color;
+    font-weight: 100;
+}
+
+h1.post-title {
+    font-size: 1.8em;
 }
 
 .posts-list-item {
@@ -62,3 +70,47 @@ html {
     width: 10rem;
     height: 10rem;
   }
+
+  .app-header, .app-header a, .app-header h1 {
+      color: $lightest-color;
+  }
+
+  pre code {
+      color: $lightest-color;
+  }
+
+pre {
+    border-radius: 5px;
+}
+
+a {
+    color: #5174a0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: $darkest-color;
+    text-decoration: none;
+}
+
+a.posts-list-item-title {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.app-header a {
+    text-decoration: none;
+}
+
+.app-header a:hover {
+    color: $primary-color;
+}
+
+.pagination a.page-link {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.pagination .active a.page-link {
+    text-decoration: none;
+}

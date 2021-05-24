@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
-    {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" -}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}"/>
 
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
@@ -18,7 +18,35 @@
     {{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}
 
   </head>
-  <body>
+  <body
+  {{- if eq .Site.Params.gtm_datalayer "basic"}} 
+      {{- if .ExpiryDate}}data-page-expiry-date='{{ .ExpiryDate.format  "2006-01-02"  }}'{{- end }}
+      data-page-publish-date='{{ .PublishDate.Format "2006-01-02" }}'
+      data-page-modified-date='{{ .Lastmod.Format "2006-01-02"  }}'
+      {{- if eq .Kind "page" }}
+        data-page-reading-time-minutes='{{ .ReadingTime }}'
+        data-page-reading-time-seconds='{{- $readTime := mul (div (countwords .Content) 220.0) 60 }}{{- math.Round $readTime}}'
+        data-page-word-count='{{- .WordCount }}'
+        data-page-word-count-fuzzy='{{- .FuzzyWordCount }}'
+      {{- end }}
+      data-page-kind='{{ .Kind }}'
+      data-page-id='{{ with .File }}{{ .UniqueID }}{{ end }}'
+      data-page-title='{{ .LinkTitle }}'
+      data-page-permalink='{{ .Permalink }}'
+      data-page-type='{{ .Type }}'
+      data-page-translated='{{ .IsTranslated }}'
+      {{- if .Params.author -}}data-page-author='{{ if .Params.author -}}{{ .Params.author }}{{- else if .Site.Author.name -}}{{ .Site.Author.name }}{{- end }}'{{- end }}	
+      {{- if .Params.categories}}{{$category := index (.Params.categories) 0}}data-page-category='{{ $category }}'{{- end }}
+      {{- if .Params.tags}}data-page-tags='{{ delimit .Params.tags "," }}'{{- end }}
+      {{- if .IsHome }}data-page-type-2='home'
+        {{- else if eq .Kind "taxonomy" }}data-page-type-2='tag'
+        {{- else if eq .Type "page" }}data-page-type-2='page'
+        {{- else }}data-page-type-2='post'
+      {{- end }}
+      data-page-language='{{ .Language }}' 
+    {{ end }}
+  >
+
     <header class="app-header">
       <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
       <h1>{{ .Site.Title }}</h1>

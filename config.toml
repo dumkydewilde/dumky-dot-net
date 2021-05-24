@@ -14,12 +14,13 @@ paginate = 6
     menu_item_separator = "|"
     gtm_id = "GTM-WP7XMQL"
     gtm_datalayer = "basic"
+    gtm_endpoint = "https://gtm.dumky.net"
     [params.style]
-        darkestColor = "#131416"
-        darkColor = "#202125"
-        lightColor = "#fff4f4"
-        lightestColor = "#fff4f4"
-        primaryColor = "#ffdccc"
+        darkestColor = "#070707"
+        darkColor = "#E4D8C4"
+        lightColor = "#011627"
+        lightestColor = "#E4D8C4"
+        primaryColor = "#464345"
     [[params.social]]
         icon = "github"
         name = "Github"
