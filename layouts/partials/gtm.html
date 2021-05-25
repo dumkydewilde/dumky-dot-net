@@ -1,5 +1,5 @@
 {{ if not (in (.Site.BaseURL | string) "localhostX") }}{{ if .Site.Params.gtm_id}}{{ if .Site.Params.gtm_endpoint}}  <link href='https://{{ .Site.Params.gtm_endpoint }}' rel="preconnect" crossorigin>
-  <link rel="dns-prefetch" href='https://{{ .Site.Params.gtm_endpoint }}'>{{ else }}<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
+  <link rel="dns-prefetch" href='{{ .Site.Params.gtm_endpoint }}'>{{ else }}<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
   <link rel="dns-prefetch" href='https://www.googletagmanager.com'>{{ end }}{{ end }}
 
 		{{ $gtm := resources.Get "js/gtm.js" | resources.ExecuteAsTemplate "js/gtm.js" . | resources.Fingerprint "sha512" }}
