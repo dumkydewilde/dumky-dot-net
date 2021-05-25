@@ -34,7 +34,7 @@
       data-page-title='{{ .LinkTitle }}'
       data-page-permalink='{{ .Permalink }}'
       data-page-type='{{ .Type }}'
-      data-page-translated='{{ .IsTranslated }}'
+      data-page-translated='{{ .IsTranslated }}' 
       {{- if .Params.author -}}data-page-author='{{ if .Params.author -}}{{ .Params.author }}{{- else if .Site.Author.name -}}{{ .Site.Author.name }}{{- end }}'{{- end }}	
       {{- if .Params.categories}}{{$category := index (.Params.categories) 0}}data-page-category='{{ $category }}'{{- end }}
       {{- if .Params.tags}}data-page-tags='{{ delimit .Params.tags "," }}'{{- end }}

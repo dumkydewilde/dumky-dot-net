@@ -1,7 +1,7 @@
 {{ if not (in (.Site.BaseURL | string) "localhostX") }}
 	{{ if .Site.Params.gtm_id}}
 		{{ if .Site.Params.gtm_endpoint}}  
-			<link href='https://{{ .Site.Params.gtm_endpoint }}' rel="preconnect" crossorigin>
+			<link href='{{ .Site.Params.gtm_endpoint }}' rel="preconnect" crossorigin>
   			<link rel="dns-prefetch" href='{{ .Site.Params.gtm_endpoint }}'>
 		{{ else }}
 			<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
@@ -22,6 +22,5 @@
 			f.parentNode.insertBefore(j,f);
 			})(window,document,'script','dataLayer','{{ .Site.Params.gtm_id }}');
 		</script>
-	
 	{{ end }}
 {{ end }}

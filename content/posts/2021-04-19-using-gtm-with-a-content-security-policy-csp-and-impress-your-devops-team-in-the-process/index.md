@@ -72,7 +72,7 @@ One way to make sure that a third party script is safe to execute is when you kn
 
 This process, called SubResource Integrity (SRI) is great for commonly used scripts like jQuery, Font Awesome, or Bootstrap. For example if we want to add Font Awesome to our site, we can just add it with the integrity attribute and be done.
 
-`<link href="[//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />`
+`<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />`
 
 As you can see the resource is also versioned (4.7.0), so we know that as long as we use the same version, we will have the same script and thus the same hash.
 
@@ -84,15 +84,15 @@ Think about GTM and what it does for a moment. It allows us to create a custom s
 
 `script-src nonce-as3d54h3sdf13a4f`;
 
-This implementation is the recommended implementation of using Google Tag Manager with a Content Security Policy. GTM even has [a 'nonce aware' script version](http://* https://developers.google.com/tag-manager/web/csp) that you'll have to add to your page instead of the default code, so that also custom JavaScript variables can be executed.
+This implementation is the recommended implementation of using Google Tag Manager with a Content Security Policy. GTM even has [a 'nonce aware' script version](https://developers.google.com/tag-manager/web/csp) that you'll have to add to your page instead of the default code, so that also custom JavaScript variables can be executed.
 
-It is good to know however that once you go nonce there's no way back and [the `'unsafe-inline'` argument will be invalidated](http://* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src). That means you'll have to be prepared for a discussion with your developer as they might be using inline scripts and will say that _"your update made our site crash"._
+It is good to know however that once you go nonce there's no way back and [the `'unsafe-inline'` argument will be invalidated](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src). That means you'll have to be prepared for a discussion with your developer as they might be using inline scripts and will say that _"your update made our site crash"._
 
 ## Analysts ❤️ Developers: How to help your developer set up a CSP for the entire site
 
 When removing or invalidating the `'unsafe-inline'` argument from your CSP you might get some push back from your developers. First of all it's good for them to know that their site is getting more secure since, as they themselves have noted, it is no longer possible to execute random code.
 
-The problem is that most of the time they will use a framework that doesn't work with a CSP out of the box. For example [for React you'll have to set a build variable called `INLINE_RUNTIME_CHUNK` to `false`.](https://create-react-app.dev/docs/advanced-configuration/)
+The problem is that most of the time they will use a framework that doesn't work with a CSP out of the box. For example [for React you'll have to set a build variable called `INLINE_RUNTIME_CHUNK` to `false`](https://create-react-app.dev/docs/advanced-configuration/).
 
 > By default, Create React App will embed the runtime script into `index.html` during the production build. When set to `false`, the script will not be embedded and will be imported as usual. This is normally required when dealing with CSP.
 

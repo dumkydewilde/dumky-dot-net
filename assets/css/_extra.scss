@@ -114,3 +114,8 @@ a.posts-list-item-title {
 .pagination .active a.page-link {
     text-decoration: none;
 }
+
+blockquote {
+    font-style: italic;
+    color: $primary-color;
+}
