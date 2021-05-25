@@ -1,8 +1,27 @@
-{{ if not (in (.Site.BaseURL | string) "localhostX") }}{{ if .Site.Params.gtm_id}}{{ if .Site.Params.gtm_endpoint}}  <link href='https://{{ .Site.Params.gtm_endpoint }}' rel="preconnect" crossorigin>
-  <link rel="dns-prefetch" href='{{ .Site.Params.gtm_endpoint }}'>{{ else }}<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
-  <link rel="dns-prefetch" href='https://www.googletagmanager.com'>{{ end }}{{ end }}
+{{ if not (in (.Site.BaseURL | string) "localhostX") }}
+	{{ if .Site.Params.gtm_id}}
+		{{ if .Site.Params.gtm_endpoint}}  
+			<link href='https://{{ .Site.Params.gtm_endpoint }}' rel="preconnect" crossorigin>
+  			<link rel="dns-prefetch" href='{{ .Site.Params.gtm_endpoint }}'>
+		{{ else }}
+			<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
+  			<link rel="dns-prefetch" href='https://www.googletagmanager.com'>
+		{{ end }}
 
-		{{ $gtm := resources.Get "js/gtm.js" | resources.ExecuteAsTemplate "js/gtm.js" . | resources.Fingerprint "sha512" }}
-		<script src="{{ $gtm.Permalink }}" integrity="{{ $gtm.Data.Integrity }}">
+		<script nonce='{{ getenv "HUGO_PARAMS_NONCESECRET" }}' data-nonce='{{ getenv "HUGO_PARAMS_NONCESECRET" }}' id="GTMSnippet">
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			{{ if .Site.Params.gtm_endpoint}}
+				'{{ .Site.Params.gtm_endpoint }}'
+			{{ else }}
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl
+			{{ end }};
+			var n=d.querySelector('[nonce]');	
+			n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce'));
+			f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','{{ .Site.Params.gtm_id }}');
 		</script>
+	
+	{{ end }}
 {{ end }}
