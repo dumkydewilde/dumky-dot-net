@@ -5,6 +5,7 @@ tags:
   - "gtm"
   - "security"
   - "performance"
+  - "page-speed"
 description: "Is GTM slowing down your site? Or are your developers or SEO consultants going on about how GTM is showing up in the Google Page Speed Insights report? Let me show you how to load GTM faster and also make it more secure in the process by building a caching proxy using Cloudflare Workers."
 ---
 "Google Page Speed says GTM is slowing down my site, can we remove it?" I've lost count of how many times I've heard that. I wrote about [some best practices to improve performance](/posts/8-ways-to-optimise-google-tag-manager-gtm-for-speed-and-performance/#server-side) before, but let me show you how to use GTM and still get that coveted [100/100 score on Google Page Speed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.dumky.net%2F&tab=desktop). We'll do so by setting up a proxy with a cache and serve Google Tag Manager from that cache instead of from the (slower) Google Tag Manager servers. This has two benefits:
@@ -16,9 +17,9 @@ description: "Is GTM slowing down your site? Or are your developers or SEO consu
 
 ## What's a proxy anyway?
 
-Normally with the GTM script, we load the GTM container from a URL that points to `[www.googletagmanager.com](http://www.googletagmanager.com)` . Google's servers are very fast, but they also have to account for the fact that you want instant updates when you publish your container and they have to decide how to distribute your container script across the globe. In contrast Cloudflare is a service that helps you protect your site from attacks, manage traffic as well as serve content as fast as possible. It's free for most low traffic (personal) sites. Cloudflare also has way more data centres than Google, so chances are your users are closer to a Cloudflare data centre than they are to a Google data centre. And shorter distances mean faster load times.
+Normally with the GTM script, we load the GTM container from a URL that points to `www.googletagmanager.com`. Google's servers are very fast, but they also have to account for the fact that you want instant updates when you publish your container and they have to decide how to distribute your container script across the globe. In contrast Cloudflare is a service that helps you protect your site from attacks, manage traffic as well as serve content as fast as possible. It's free for most low traffic (personal) sites. Cloudflare also has way more data centres than Google, so chances are your users are closer to a Cloudflare data centre than they are to a Google data centre. And shorter distances mean faster load times.
 
-Cloudflare, like a lot of other content delivery networks (CDN's) offers options to cache data. But they also offer the option to point your own domain to a so-called 'Worker' in their data center. A worker is basically a little piece of JavaScript that can do some magic in between requests. So when someone requests our `[gtm.my-domain.com](http://gtm.my-domain.com)` that URL will point to our worker and our worker will do the hard work of checking whether our container is available in the cache or if it has to be requested from `[www.googletagmanager.com](http://www.googletagmanager.com)`. And that's exactly what a proxy does.
+Cloudflare, like a lot of other content delivery networks (CDN's) offers options to cache data. But they also offer the option to point your own domain to a so-called 'Worker' in their data center. A worker is basically a little piece of JavaScript that can do some magic in between requests. So when someone requests our `gtm.my-domain.com` that URL will point to our worker and our worker will do the hard work of checking whether our container is available in the cache or if it has to be requested from `www.googletagmanager.com`. And that's exactly what a proxy does.
 
 If you're using Google Tag Manager server-side, there is actually a function that helps you serve the GTM container by using your GTM server-side domain as a proxy. That's great for security, however if you're looking for speed, you also need to make sure that your own servers are fast enough to handle the load and you're still not caching the actual GTM container.
 
@@ -107,13 +108,13 @@ In order for the Cloudflare Worker to actually be able to use our subdomain we h
 
 ### 4. Map the worker to the subdomain
 
-Mapping the worker to the subdomain is as simple as just going to the workers tab in your Cloudflare dashboard and adding a route that says `[gtm.your-domain.com](http://gtm.your-domain.com)` and uses the `gtm-proxy` worker we created earlier.
+Mapping the worker to the subdomain is as simple as just going to the workers tab in your Cloudflare dashboard and adding a route that says `gtm.your-domain.com` and uses the `gtm-proxy` worker we created earlier.
 
 ![images/cloudflare-adjust-workers.png](images/cloudflare-adjust-workers.png)
 
 ### 5. Updating the GTM snippet
 
-Lastly, we need to point the GTM snippet on our site to the new subdomain. That means we'll have to adjust the code a little bit. The normal code points to `[googletagmanager.com](http://googletagmanager.com)` + `GTM-CONTAINER-ID` + `dataLayer name`. 
+Lastly, we need to point the GTM snippet on our site to the new subdomain. That means we'll have to adjust the code a little bit. The normal code points to `googletagmanager.com` + `GTM-CONTAINER-ID` + `dataLayer name`. 
 
 ```jsx
 <!-- Google Tag Manager -->
