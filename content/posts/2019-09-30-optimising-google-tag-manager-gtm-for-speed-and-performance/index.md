@@ -9,7 +9,9 @@ tags:
 description: "Google Tag Manager makes it incredibly easy to add marketing tags to your site. From registering ads conversions and transactions to sophisticated tags that segment users based on the weather in their current location, you can go crazy without having to go back to your development team every time. But that doesn't mean you should do it all. While your dev and SEO teams are working hard to reach their pagespeed goals all the marketeers are having a proverbial party in their yard. Here you'll find a few tips to keep your GTM container lean and fast."
 ---
 
-_UPDATE: with the [GTM server-side release](https://www.dumkydewilde.nl/2020/08/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) I've added a [section](#server-side) on server-side tagging_
+_UPDATE: with the [GTM server-side release](https://www.dumkydewilde.nl/2020/08/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) I've added a [section](#8-server-side-tagging) on server-side tagging_
+
+_UPDATE 2: There's a [number 9](#9-bonus-using-a-caching-proxy-to-load-gtm) that shows you how to serve GTM through a caching proxy for increased performance_
 
 Google Tag Manager makes it incredibly easy to add marketing tags to your site. From registering ads conversions and transactions to sophisticated tags that segment users based on the weather in their current location, you can go crazy without having to go back to your development team every time. But that doesn't mean you should do it all. While your dev and SEO teams are working hard to reach their [pagespeed goals](https://developers.google.com/speed/pagespeed/insights/), all the marketeers are having a proverbial party in their yard. Here you'll find a few tips to keep your GTM container lean.
 
@@ -108,3 +110,7 @@ Minification is often combined with bundling. Every separate script means a new 
 With the release of [GTM Server-side](https://www.dumkydewilde.nl/2020/08/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) you now have the option of off-loading a lot of your tags to your server instead of sending it through the user's browser. Tools like Segment have been doing this for a long time, but the basic principle is this. Instead of sending hits to every advertising and analytics platform with every user interaction, you only send that hit once to your "own" tagging server and on that server you have your own logic to decide how you want to distribute the information from that hit.
 
 So you send a button click event to your server with both a Google and a Facebook identifier and on your server you send a `buttonClick` event to Google with the relevant identifier as well as a `buttonClick` event to Facebook with the Facebook identifier. The performance benefit here is two-fold: you don't have to load the Facebook and Google libraries on your site _and_ your sending only one request from the user's browser.
+
+## 9\. BONUS! Using a caching proxy to load GTM
+
+I just keep adding stuff to the list, but this one is very nice to shave those final milliseconds of your page load. If you're using a CDN or service like Cloudflare you might be able to cache the GTM container there and load it through your own CDN. I wrote a piece on how to do exactly that [with Cloudflare Workers](/posts/speeding-up-gtm-with-a-caching-proxy-using-cloudflare-workers/).
