@@ -35,7 +35,7 @@ To make our plan work we need to complete a few steps:
 
 ### 1. Building a Cloudflare Worker to return a GTM container
 
-If you have a Cloudflare account, you can go to the Workers Overview to create a new worker. This will give you an area to add your script as well as test and debug it. If you deploy your worker, you'll get a URL on the worker domain that you can use. Mine is `[gtm-proxy.dumky.workers.dev](http://gtm-proxy.dumky.workers.dev)` for example.
+If you have a Cloudflare account, you can go to the Workers Overview to create a new worker. This will give you an area to add your script as well as test and debug it. If you deploy your worker, you'll get a URL on the worker domain that you can use. Mine is `gtm-proxy.dumky.workers.dev` for example.
 
 ![images/cloudlfare-worker-edit-example.png](images/cloudlfare-worker-edit-example.png)
 
