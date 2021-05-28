@@ -11,9 +11,9 @@ description: "Google Tag Manager makes it incredibly easy to add marketing tags 
 
 _UPDATE: with the [GTM server-side release](https://www.dumkydewilde.nl/2020/08/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) I've added a [section](#8-server-side-tagging) on server-side tagging_
 
-_UPDATE 2: There's a [number 9](#9-bonus-using-a-caching-proxy-to-load-gtm) that shows you how to serve GTM through a caching proxy for increased performance_
+_UPDATE 2: There's a [number 9](#9-bonus-using-a-caching-proxy-to-load-gtm) that shows you how to serve GTM through a caching proxy to increase performance_
 
-Google Tag Manager makes it incredibly easy to add marketing tags to your site. From registering ads conversions and transactions to sophisticated tags that segment users based on the weather in their current location, you can go crazy without having to go back to your development team every time. But that doesn't mean you should do it all. While your dev and SEO teams are working hard to reach their [pagespeed goals](https://developers.google.com/speed/pagespeed/insights/), all the marketeers are having a proverbial party in their yard. Here you'll find a few tips to keep your GTM container lean.
+Google Tag Manager makes it incredibly easy to add marketing tags to your site. From registering ads conversions and transactions to sophisticated tags that segment users based on the weather in their current location, you can go crazy without having to go back to your development team every time. But that doesn't mean you should do it all. While your dev and SEO teams are working hard to reach their [pagespeed goals](https://developers.google.com/speed/pagespeed/insights/), all the marketeers are having a proverbial party in their yard. Here you'll find a few tips to increase performance, clean up tags and variables, remove unused javascript and keep your Google Tag Manager container lean.
 
 ## Best Practices
 
