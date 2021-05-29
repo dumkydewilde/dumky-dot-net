@@ -88,6 +88,33 @@ This implementation is the recommended implementation of using Google Tag Manage
 
 It is good to know however that once you go nonce there's no way back and [the `'unsafe-inline'` argument will be invalidated](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src). That means you'll have to be prepared for a discussion with your developer as they might be using inline scripts and will say that _"your update made our site crash"._
 
+### Executing Custom HTML tags in GTM with a content security policy (CSP)
+
+The Custom HTML tag is a little different from all the other tags in GTM. The standard 'template' tags —including custom templates— are in a sandbox environment. That basically means that GTM can compile them into the GTM script and load them into your site when GTM is loaded because they stick to a certain set of rules. Custom HTML however could be anything. It's impossible for GTM to include it in the first load, and so it has to be injected into the page after GTM is loaded. 
+
+However, as we saw before, to inject Custom HTML into the page we need to do two things:
+- Add the nonce value
+- Turn on the `document.write` checkbox so we use a different way of injecting into the page
+
+Number two is easy, but number one is a PITA because _nonces behave differently in Chrome than in Safari, Firefox or other browsers (!)_. One place where you can notice this is that if you look in the rendered source in the developer tools you'll see that the `nonce` attribute has no value. However, when you look in the source code (right click > View Page Source) you will see these nonces. 
+
+The best way to add the nonce to your Custom HTML tag is to use a DOM Element variable. However, when we use the attribute `nonce` you'll find that it will not work in Chrome. When however we add the nonce also to a data attribute (e.g. `data-nonce`) you will find it does work and run your Custom HTML tag. The `data-nonce` attribute is a little less secure since it doesn't have the same browser checks, but alas it is all we can do for now. 
+
+![iamges/gtm-dom-element-variable-nonce.png](images/gtm-dom-element-variable-nonce.png)
+
+Here's what the output of different variables looks like in Chrome 90.0
+![images/gtm-custom-html-nonce-output-chrome.png](images/gtm-custom-html-nonce-output-chrome.png)
+
+And here's what it looks like in Safari
+![images/gtm-custom-html-nonce-output-safari.png](images/gtm-custom-html-nonce-output-safari.png)
+
+
+### Executing Custom JavaScript variables in GTM with a content security policy (CSP)
+
+Now that you're able to execute Custom HTML tags with your CSP you'll likely also want to be able to use your Custom JavaScript variables. The answer to that, I'm afraid, is very short: "no". Custom JS variables are run using the `eval()` statement which can execute any random piece of JavaScript without oversight. The only way to allow that would be to add `unsafe-eval` to your CSP, thereby negating the whole purpose of the CSP because it is —as it implies— _unsafe_.
+
+The only solution you have is either using a custom template, or if it requires DOM manipulation for example, trying to work around it by using a Custom HTML tag at the right time. E.g. by having the Custom HTML tag populate a JavaScript variable that you can read with a template variable.
+
 ## Analysts ❤️ Developers: How to help your developer set up a CSP for the entire site
 
 When removing or invalidating the `'unsafe-inline'` argument from your CSP you might get some push back from your developers. First of all it's good for them to know that their site is getting more secure since, as they themselves have noted, it is no longer possible to execute random code.
