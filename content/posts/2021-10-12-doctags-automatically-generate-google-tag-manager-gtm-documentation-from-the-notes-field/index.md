@@ -1,3 +1,13 @@
+---
+title: "DocTags: automatically generate documentation from the notes field in Google Tag Manager (GTM)"
+date: "2021-10-12"
+tags: 
+  - "gtm"
+  - "GCP"
+  - "documentation"
+  - "Cloud Function"
+description: "GTM DocTags is a lightweight documentation generator for Google Tag Manager. It uses the notes field on tags, triggers and variables in Google Tag Manager —does anybody even use the note field?— and grabs that and some additional info through the GTM API to create a set of markdown files. The markdown files can be stored in Google Cloud Storage and rendered at runtime with Docsify to create a fully searchable, neat looking documentation site that you can serve your developers and other team members."
+---
 # DocTags: automatically generate documentation from the notes field in Google Tag Manager (GTM)
 
 *If you're just looking for the code and a quick start, you can [find everything on Github](https://github.com/dumkydewilde/gtm-doctags)*
