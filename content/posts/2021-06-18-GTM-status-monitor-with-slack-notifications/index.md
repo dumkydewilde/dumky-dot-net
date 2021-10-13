@@ -9,8 +9,6 @@ tags:
   - "Cloud Function"
 description: "It's impossible to sett up a pipeline in Google Tag Manager for when new container versions are published. It'd be great to get notifications of container updates, for security reasons, to run tests, update documentation, or to get notifications in services like Slack. Let's try and build a GTM status monitor that can send a notification to Slack when a new container version is published!"
 ---
-# Monitor Google Tag Manager version status and send notifications to Slack: the easy (with Zapier) and hard way (GCP)
-
 One thing that has bothered me over the years is the weirdness of not having any possibility for setting up a pipeline in Google Tag Manager for when new container versions are published. Wouldn't it be great not only for security reasons to keep an eye on container updates, but also to automatically update documentation, set up notifications in other services, or run some tests. But alas, all we have —and only since recently— is a dropdown that let's a user receive a notification when a new version is published. 
 
 So let's take power into our own hands and get things done. Today we are building a notification system for GTM that allows us to send notifications anywhere with a webhook. A great use case is sending a webhook to Slack so that we can keep track of all the containers of interest that are updated. 

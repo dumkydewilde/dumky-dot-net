@@ -8,15 +8,13 @@ tags:
   - "Cloud Function"
 description: "GTM DocTags is a lightweight documentation generator for Google Tag Manager. It uses the notes field on tags, triggers and variables in Google Tag Manager —does anybody even use the note field?— and grabs that and some additional info through the GTM API to create a set of markdown files. The markdown files can be stored in Google Cloud Storage and rendered at runtime with Docsify to create a fully searchable, neat looking documentation site that you can serve your developers and other team members."
 ---
-# DocTags: automatically generate documentation from the notes field in Google Tag Manager (GTM)
-
-*If you're just looking for the code and a quick start, you can [find everything on Github](https://github.com/dumkydewilde/gtm-doctags)*
+*If you're just looking for the code and a quick start, you can [find everything on Github](https://github.com/dumkydewilde/gtm-doctags) and you can find a live demo at [docs.dumky.net](http://docs.dumky.net).*
 
 Google Tag Manager is a great tool when you first get to know it: you can finally track that button in Google Analytics without having to wait 6 months on your dev team, hurrah! But after a few years reality kicks in. Now you're three agencies and two interns in and your container is starting to show it: five similar looking pageview triggers, 300 tags of which half seems to. be for pages from before your website migration to a new platform and the other half for the agency you fired but that still pushed the tags for each of their unique display campaigns from DV360 to GTM.
 
 So, you're looking for some structure, eh? Some guidance? Maybe some... documentation? You have a Google Sheet with a half-baked measurement plan, but it's outdated and no longer useful and it never contained all the tags in the first place. What you need is an intern who would just copy all the notes from your GTM container to a nice looking documentation site. WAIT WHAT?!? We can AUTOMATE that without an intern?
 
-![images/doctags-demo.png](images/doctags-demo.png)
+![[images/doctags-demo.png](images/doctags-demo.png)](http://docs.dumky.net)
 
 GTM has a neat feature called "notes" that's hidden behind the ominous three dots and that nobody ever seems to use. But what if we could leverage that to make it *actually* useful? Lucky for us, the notes field is exposed through the API so we can work our magic on it. Here's what we'll do to generate a beautiful documentation site for our container using [Docsify](https://docsify.js.org/) that always contains the latest version.
 
@@ -24,6 +22,8 @@ GTM has a neat feature called "notes" that's hidden behind the ominous three dot
 - Place those markdown files in a Cloud Storage bucket and enable that for static hosting
 - Add a little magic called [Docsify](https://docsify.js.org/) to our Cloud Storage bucket
 - Point our `docs.` subdomain to that bucket for easy access
+
+Sounds good? Have a look at the [live demo](http://docs.dumky.net) or let's go build it!
 
 ## Using NodeJS to access the Google Tag Manager (GTM) API
 
@@ -177,9 +177,13 @@ const firingTagsPrettyList = firingTags.map(tag => {
 }).join(",\n");
 ```
 
-## Sprinkling Docsify fairy dust over our markdown files
+## Deploying and triggering our Cloud Function
+While our script above can run from our test environment we obviously also want to deploy and schedule it. We can just use [the gcloud CLI](https://cloud.google.com/functions/docs/quickstart) (e.g. `gcloud functions deploy containerToMarkDown --runtime nodejs14 --trigger-http --allow-unauthenticated`) or use the web interface. I like [the web interface](https://console.cloud.google.com/functions/list) in this case as it'll be a one time thing only and it makes it easy to set runtime variables and select the deployment region. 
 
-Docsify is a documentation generator that consists of an `index.html` with some JavaScript to parse and render markdown files into a beautiful documentation site. It is not a static site generator like Hugo or Vuepress although you could use Docsify for server-side rendering if you wish. The problem with static site generators is that they require an extra step to generate the site —duh... 🤦‍♂️. In practice though, that means having an extra processing 'unit' and extra complexity (e.g. Cloudflare Pages, Netlify, Github Actions, ...). Docsify needs nothing more than a simple file server to run the site on (our Google Cloud Storage bucket in this case).
+When we setup the cloud function, we'll also have to decide how to trigger it. As a very basic setup you could trigger it to run every day or even at set times every day. You can use Cloud Scheduler to do that by creating a new job (e.g. `0 */4 * * *` will run 4 times a day) and trigger a pub/sub topic that. You can then use that pub/sub topic as a trigger for your Cloud Function. But if you want something more fancy, you can also have a look at my [post on setting up a GTM status monitor](/posts/monitor-google-tag-manager-version-status-and-send-notifications-to-slack-the-easy-way-zapier-and-hard-way-gcp/ ) and have it run whenever there's a new version of your container.
+
+## Sprinkling Docsify fairy dust over our markdown files
+Now that the mechanics are out of the way, we can continue to the actual magic. Docsify is a documentation generator that consists of an `index.html` with some JavaScript to parse and render markdown files into a beautiful documentation site. It is not a static site generator like Hugo or Vuepress although you could use Docsify for server-side rendering if you wish. The problem with static site generators is that they require an extra step to generate the site —duh... 🤦‍♂️. In practice though, that means having an extra processing 'unit' and extra complexity (e.g. Cloudflare Pages, Netlify, Github Actions, ...). Docsify needs nothing more than a simple file server to run the site on (our Google Cloud Storage bucket in this case).
 
 The `index.html` file itself is extremely small: some styles (not shown), a `div` element to hook onto, some settings and the docsify JS  with some plugins (search, theme)
 
