@@ -14,7 +14,7 @@ Google Tag Manager is a great tool when you first get to know it: you can finall
 
 So, you're looking for some structure, eh? Some guidance? Maybe some... documentation? You have a Google Sheet with a half-baked measurement plan, but it's outdated and no longer useful and it never contained all the tags in the first place. What you need is an intern who would just copy all the notes from your GTM container to a nice looking documentation site. WAIT WHAT?!? We can AUTOMATE that without an intern?
 
-![[images/doctags-demo.png](images/doctags-demo.png)](http://docs.dumky.net)
+[![images/gtm-doctags-demo.png](images/gtm-doctags-demo.png)](http://docs.dumky.net)
 
 GTM has a neat feature called "notes" that's hidden behind the ominous three dots and that nobody ever seems to use. But what if we could leverage that to make it *actually* useful? Lucky for us, the notes field is exposed through the API so we can work our magic on it. Here's what we'll do to generate a beautiful documentation site for our container using [Docsify](https://docsify.js.org/) that always contains the latest version.
 
@@ -210,6 +210,10 @@ The `index.html` file itself is extremely small: some styles (not shown), a `div
 	<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
 </body>
 ```
+
+In the `home.md` file you can also add some extra information about your container like the container snippet for example.
+![images/gtm-doctags-demo-home.png](images/gtm-doctags-demo-home.png)
+
 
 I encourage you to [look through the Docsify documentation and showcases](https://docsify.js.org/#/?id=docsify)!
 
