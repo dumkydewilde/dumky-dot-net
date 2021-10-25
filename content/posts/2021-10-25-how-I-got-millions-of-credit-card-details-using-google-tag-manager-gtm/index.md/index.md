@@ -52,6 +52,6 @@ Now, the smarty pants in the room will say "ha, you crook, my site has a Content
 
 By now, you're hopefully starting to see that, unless you're 100% sure that your customers are more than happy to fill the coffers of my college fund —as they surely, maybe, potentially have over the last year—, you might want to check your GTM implementation and overall website security. 
 
-</sarcasm>
+`</sarcasm>`
 
 Of course, **I'm not actually, maliciously injecting millions of GTM containers with code**, but I do hope you see that malevolent actors have gone to much greater lengths than what I described above to achieve similar things. Though my story is fictional, the concepts in this post are far from that. Start locking down your GTM container today by turning on email notifications, scrutinising access policies, and integrating it with your website and content security policies. Though agencies play a big part in this story, it is your responsibility to ask questions about security regarding your website, just like you would ask questions about, for example, giving access to a physical store or office.
