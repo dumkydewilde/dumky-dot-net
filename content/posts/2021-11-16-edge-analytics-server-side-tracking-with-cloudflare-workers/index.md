@@ -1,6 +1,6 @@
 ---
 title: "Analytics on the edge: server-side request tracking and cookie setting using Cloudflare Workers"
-date: "2021-10-25"
+date: "2021-11-22"
 tags: 
   - "google-analytics"
   - "measurement-protocol"
