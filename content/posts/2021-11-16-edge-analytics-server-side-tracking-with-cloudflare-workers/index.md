@@ -2,14 +2,14 @@
 title: "Analytics on the edge: server-side request tracking and cookie setting using Cloudflare Workers"
 date: "2021-10-25"
 tags: 
-  - "google analytics"
-  - "measurement protocol"
+  - "google-analytics"
+  - "measurement-protocol"
   - "cloudflare"
   - "serverless"
-  - "cloudflare workers"
+  - "cloudflare-workers"
   - "dns"
-  - "edge analytics"
-  - "server-side tracking"
+  - "edge-analytics"
+  - "server-side"
 description: "Server-side tracking is all the rage these days, but let me tell you about the uber-coolest kid on the blockchain: edge analytics. I'm kidding, there's no such thing as edge analytics (except maybe for IoT devices), but there is the possibility to intercept requests on the 'edge' of the network. Using Cloudflare Workers, you can send data to Google Analytics for all kinds of scenarios, even for users visiting pages THAT DON'T EVEN EXIST! " 
 ---
 Server-side tracking is all the rage these days, but let me tell you about the uber-coolest kid on the blockchain: edge analytics. I'm kidding, there's no such thing as edge analytics (except maybe for IoT devices —story for another time—), but there is the possibility to intercept requests on the 'edge' of the network. Using Cloudflare Workers, you can send data to Google Analytics for all kinds of scenarios, even for users visiting pages THAT DON'T EVEN EXIST! 
