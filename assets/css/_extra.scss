@@ -1,3 +1,33 @@
+body, .app-header {
+    background-color: $lightest-color;
+    color: $darkest-color !important;
+}
+
+.app-header h2.sub-title {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: -1em;
+}
+
+.app-header h2.sub-title:after {
+    display: inline-block;
+    content: "";
+    height: 3px;
+    background: $primary-color;
+    width: 40%;
+    margin-top: -2px;
+    margin-left: 10px;
+  }
+
+a, a:visited, a:active {
+    color: $primary-color;
+}
+
+a:hover {
+    color: $dark-color !important;
+    text-decoration: underline !important;
+}
+
 a.posts-list-item-title {
     font-size: 1.2em;
     font-weight: 100;
@@ -34,31 +64,36 @@ div.posts-list-item-description-meta {
   }
 
 a.tag {
-    background-color: $primary-color;
-    color: $lightest-color;
+    background-color: $light-color;
+    color: $dark-color;
     border-radius: 5px;
     text-decoration: none;
 }
 
 a.tag:hover {
-    background-color: $darkest-color;
-    color: $lightest-color;
+    background-color: $primary-color;
+    color: $lightest-color !important;
     border-radius: 5px;
-    text-decoration: none;
+    text-decoration: none !important    ;
 }
 
 h1, h2, h3, h4, h5, h6, .post-title {
-    color: $primary-color;
+    color: $primary-color !important;
     font-weight: 100;
+    margin-top: 0;
 }
 
 h1.post-title {
     font-size: 1.8em;
 }
 
+.posts-list {
+    margin-top: 0;
+}
+
 .posts-list-item {
     list-style: none;
-    padding: 1em 0;
+    padding: 0 0 1em 0;
     font-size: 1.25em;
 }
 
@@ -67,12 +102,11 @@ html {
   }
 
   .app-header-avatar {
-    width: 10rem;
-    height: 10rem;
+    display: none;
   }
 
-  .app-header, .app-header a, .app-header h1 {
-      color: $lightest-color;
+  .app-header {
+      text-align: right;
   }
 
   pre code {
@@ -83,9 +117,11 @@ pre {
     border-radius: 5px;
 }
 
-a {
-    color: #5174a0;
-    text-decoration: underline;
+p code, li code {
+    color: $dark-color;
+    background-color: $light-color;
+    border-radius: 5px;
+    padding: 0 5px;
 }
 
 a:hover {
