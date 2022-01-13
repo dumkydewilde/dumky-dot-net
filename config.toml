@@ -9,6 +9,7 @@ paginate = 6
 
 [params]
     author = "Dumky de Wilde"
+    subTitle = "Dumky de Wilde"
     description = "Hey! My name is Dumky, I'm an analytics engineer and like to talk about Google Tag Manager, analytics, web site security, javascript, automated testing, online marketing ethics and —every now and then— my philosophy education."
     avatar = "profile.jpg"
     menu_item_separator = "|"
@@ -16,11 +17,11 @@ paginate = 6
     gtm_datalayer = "basic"
     gtm_endpoint = "https://gtm.dumky.net"
     [params.style]
-        darkestColor = "#070707"
-        darkColor = "#E4D8C4"
-        lightColor = "#011627"
-        lightestColor = "#E4D8C4"
-        primaryColor = "#464345"
+        darkestColor = "#240800"
+        darkColor = "#691100"
+        lightColor = "#FFDBD1"
+        lightestColor = "#FFF8F6"
+        primaryColor = "#FA3600"
     [[params.social]]
         icon = "github"
         name = "Github"

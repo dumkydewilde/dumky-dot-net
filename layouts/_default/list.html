@@ -1,6 +1,8 @@
 {{ define "main" }}
   <article>
-    <h1>{{ .Title }}</h1>
+    {{- if .IsHome }}
+    {{- else }}<h1>{{ .Title }}</h1>
+    {{- end }}
     <ul class="posts-list">
       {{ range where .Paginator.Pages "Type" "!=" "page" }}
         <li class="posts-list-item" data-gtm-post-name="{{ .Page.File.ContentBaseName }}" data-gtm-post-id="{{ .Page.File.UniqueID }}" data-gtm-post-date='{{  .Page.Date.Format "2006-01-02" }}'>
