@@ -102,7 +102,14 @@ html {
   }
 
   .app-header-avatar {
-    display: none;
+    width: 80px;
+    border-radius: 0;
+    border: 0;
+  }
+
+  .app-header-avatar:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
   }
 
   .app-header {
@@ -125,8 +132,8 @@ p code, li code {
 }
 
 a:hover {
-    color: $darkest-color;
-    text-decoration: none;
+    color: $primary-color !important;
+    text-decoration: underline !important;
 }
 
 a.posts-list-item-title {

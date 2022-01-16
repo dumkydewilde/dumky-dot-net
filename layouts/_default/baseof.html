@@ -49,7 +49,10 @@
 
     <header class="app-header">
       <!-- <img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /> -->
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <a href="{{ .Site.BaseURL }}">
+        <img class="app-header-avatar" src="{{ .Site.Params.Avatar }}"/>
+        <h1>{{ .Site.Title }}</h1>
+      </a>
       <h2 class="sub-title">{{ .Site.Params.SubTitle }}</h2>
 
       {{- with .Site.Menus.main }}

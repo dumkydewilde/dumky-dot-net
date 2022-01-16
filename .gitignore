@@ -6,3 +6,5 @@ resources/
 .DS_Store
 .editorconfig
 
+#other
+.afdesign
