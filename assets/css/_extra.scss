@@ -7,6 +7,7 @@ body, .app-header {
     font-size: 1.2em;
     font-style: italic;
     margin-top: -1em;
+    display: block;
 }
 
 .app-header h2.sub-title:after {
@@ -16,7 +17,7 @@ body, .app-header {
     background: $primary-color;
     width: 40%;
     margin-top: -2px;
-    margin-left: 10px;
+    margin-left: 60%;
   }
 
 a, a:visited, a:active {

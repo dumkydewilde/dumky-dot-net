@@ -7,4 +7,5 @@ resources/
 .editorconfig
 
 #other
-.afdesign
+**/*.afdesign
+
