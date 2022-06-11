@@ -7,6 +7,7 @@ tags:
   - "google-analytics"
   - "puppeteer"
   - "testing"
+  - "browser_automation"
 description: "Testing your analytics setup regularly can help you prevent uncomfortable situations with your boss or client when there's been another change on the site and suddenly all your campaigns and goals have zero conversions. We will look at how to test the actual requests that are being sent to Google Analytics, Facebook, or any other place you have your tags pointed at."
 ---
 

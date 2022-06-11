@@ -6,6 +6,7 @@ tags:
   - "cypressio"
   - "gtm"
   - "testing"
+  - "browser_automation"
 description: "One thing that's often overlooked in setting up your analytics is making sure it keeps working. When you add new tags or your developers deploy new versions it's easy to forget about your site tracking until the revenue in your ecommerce reports drops to zero. That's usually the point where accusations fly back and forth past the office chairs and the boardroom starts asking uncomfortable questions. So let's set up some tests for your analytics and tag management."
 ---
 

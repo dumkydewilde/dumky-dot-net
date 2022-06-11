@@ -176,9 +176,11 @@ async with async_playwright() as p:
 ```
 
 You can find [the full version of the script on Github](https://github.com/dumkydewilde/auto-consent-checks) with some added sugar so you can actually run it from the command line. You can provide either a single URL or a file with one URL per line.
+
 `python3 main.py "url_list.txt" --batch_size=10`
 
 Or for a single site, showing the actual browser window
+
 `python3 main.py https://www.dumky.net --no_headless`
 
 ----
