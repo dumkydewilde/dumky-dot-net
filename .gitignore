@@ -5,6 +5,7 @@ resources/
 #OS
 .DS_Store
 .editorconfig
+**/*.icloud
 
 #other
 **/*.afdesign
