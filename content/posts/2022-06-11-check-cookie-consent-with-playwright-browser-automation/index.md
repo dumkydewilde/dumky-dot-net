@@ -15,6 +15,8 @@ There's nothing like watching 20 browser windows pop-up on your screen to make y
 - which cookies are set before and after consent
 - which marketing/analytics requests are sent before and after consent is given
 
+![example of playwright browser automation windows popping up](images/playwright-browser-automation.gif)
+
 I've used [Puppeteer](https://www.dumky.net/posts/using-puppeteer-to-automate-your-google-analytics-testing/) before, but Playwright does its name justice and one-ups Puppeteer to just leave it in the dust. In contrast to Puppeteer, Playwright allows you to automate not just Chrome, but also Firefox and Safari. And on top of that it not only provides a Node.js API but also Python, Java and .NET. Let's give it a spin!
 
 ## Consent and GDPR compliance
