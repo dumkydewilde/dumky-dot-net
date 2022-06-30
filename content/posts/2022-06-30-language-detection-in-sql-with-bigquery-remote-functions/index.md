@@ -7,7 +7,7 @@ tags:
   - "Cloud Function"
   - "language"
   - "gcp"
-description: "There's nothing like watching 20 browser windows pop-up on your screen to make you feel like a proper hacker. Let's write a Python script to do GDPR consent checks with Playwright and detect the consent manager, cookies set, and marketing and analytics trackers on a site." 
+description: "Over the last few years SQL has really started embracing its second adolescence. That's cool, but what if you could easily extend your queries beyond the SQL domain and add in Python and Javascript based serverless functions to get real time stock information, enrich location data or: build a language detection function!? That's what we'll do." 
 ---
 
 Over the last few years SQL has really started embracing its second adolescence —it's nearly half a century old after all. It's been riding the fast sportsbike —dbt— and now the Google BigQuery SQL dialect is trying out something more extreme: native integration with serverless functions, called [BigQuery Remote Functions](https://cloud.google.com/bigquery/docs/reference/standard-sql/remote-functions). Ok, maybe that doesn't sound as exciting as a sportsbike, but hear me out. 
