@@ -10,12 +10,16 @@ paginate = 6
 [params]
     author = "Dumky de Wilde"
     subTitle = "Dumky de Wilde"
-    description = "Hey! I'm Dumky, analytics engineer from Amsterdam. I've been building websites since I was 9 years old and you can find me talking about Google Tag Manager, analytics, cloud platforms, security, JavaScript, automated testing, online marketing ethics and —every now and then— my philosophy education."
+    description = """Hey! I'm Dumky, analytics engineer. 
+        I've spent the first half of my working life in web analytics turning Google Tag Manager (GTM) inside out.
+        Nowadays I spend most of my time dusting off old data models 
+        and scrubbing ingestion pipelines clean in distributed data platforms."""
     avatar = "/turtle.svg"
     menu_item_separator = "|"
     gtm_id = "GTM-WP7XMQL"
     gtm_datalayer = "basic"
     gtm_endpoint = "https://gtm.dumky.net"
+    snowplow_endpoint = "https://snow.dumky.net"
     [params.style]
         darkestColor = "#240800"
         darkColor = "#691100"
