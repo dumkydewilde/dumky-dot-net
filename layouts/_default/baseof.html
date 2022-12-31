@@ -84,7 +84,7 @@
       {{ block "main" . }}
         {{ .Content }}
       {{ end }}
-      {{- if eq .Kind "page" }}{{- partial "thumbs.html" . }}{{- end }}
+      {{- if eq .Type "posts" }}{{- partial "thumbs.html" . }}{{- end }}
     </main>
   </body>
 </html>
