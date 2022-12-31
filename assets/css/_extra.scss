@@ -113,6 +113,15 @@ html {
     transform: scaleX(-1);
   }
 
+  @media screen and (max-width: 992px) {
+    .app-header-avatar {
+      float: left;
+    }
+    .app-header {
+        font-size: 0.9em;
+    }
+  }
+
   .app-header {
       text-align: right;
   }
