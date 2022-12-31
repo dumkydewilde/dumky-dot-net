@@ -20,26 +20,43 @@ paginate = 6
     gtm_datalayer = "basic"
     gtm_endpoint = "https://gtm.dumky.net"
     snowplow_endpoint = "https://snow.dumky.net"
+    thumbs_up_description = "Wow, you made it all the way down! Let me know if you liked it. And feel free to [buy me a coffee](https://www.buymeacoffee.com/dumky) if you did."
     [params.style]
         darkestColor = "#240800"
         darkColor = "#691100"
         lightColor = "#FFDBD1"
         lightestColor = "#FFF8F6"
         primaryColor = "#FA3600"
+
     [[params.social]]
+        subset = "brands"
         icon = "github"
         name = "Github"
         url = "https://github.com/dumkydewilde"
     
     [[params.social]]
+        subset = "brands"
         icon = "twitter"
         name = "Twitter"
         url = "https://twitter.com/dumkydewilde"
     
     [[params.social]]
+        subset = "brands"
         icon = "linkedin"
         name = "LinkedIn"
         url = "https://www.linkedin.com/in/dumkydewilde/"
+
+    [[params.social]]
+        subset = "brands"
+        icon = "slack"
+        name = "Measure Slack"
+        url = "https://www.measure.chat/"
+
+    [[params.social]]
+        subset = "solid"
+        icon = "mug-hot"
+        name = "Buy Me A Coffee"
+        url = "https://www.buymeacoffee.com/dumky"
 
 [menu]
     [[menu.main]]

@@ -151,12 +151,12 @@ a.posts-list-item-title {
     text-decoration: none;
 }
 
-.app-header a {
-    text-decoration: none;
+.app-header a, .app-header-social a {
+    text-decoration: none !important;
 }
 
-.app-header a:hover {
-    color: $primary-color;
+.app-header a:hover, .app-header-social a:hover {
+    color: $dark-color !important;
 }
 
 .pagination a.page-link {
@@ -175,7 +175,7 @@ blockquote {
 
 .thumbs {
     padding-top: 32px;
-    color: $primary-color;
+    color: $dark-color;
     margin: auto;
     text-align: center;
     max-width: 300px;
@@ -184,12 +184,7 @@ blockquote {
 
 .thumbs .fa-thumbs-up {
     -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-
-.thumbs .fa-thumbs-up:hover {
-    -webkit-transform: scaleX(-1.1) !important;
-    transform: scaleX(-1.1) !important;
+    transform: scaleX(-1);    
 }
 
 .icon-block {
@@ -207,4 +202,9 @@ blockquote {
     cursor: pointer;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+.thumbs .fa-thumbs-up:hover {
+    -webkit-transform: scale(-1.1, 1.1);
+    transform: scale(-1.1, 1.1);
 }

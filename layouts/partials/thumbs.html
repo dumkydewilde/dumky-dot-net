@@ -1,5 +1,5 @@
 <div class="thumbs">
-    Thanks for reading all the way through. Like what you read?
+    {{ .Site.Params.thumbs_up_description | .RenderString }}
     <div class="icon-block" onload="setThumb()">
         <i class="fa fa-regular fa-thumbs-up" onclick="clickThumb('up')" id="thumbs-up"></i>
         <i class="fa fa-regular fa-thumbs-down" onclick="clickThumb('down')" id="thumbs-down"></i>

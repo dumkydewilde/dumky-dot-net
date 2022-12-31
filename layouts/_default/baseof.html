@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css"/>
     <link rel="stylesheet" href="/fontawesome/css/solid.min.css"/>
     <link rel="stylesheet" href="/fontawesome/css/regular.min.css"/>
+    <link rel="stylesheet" href="/fontawesome/css/brands.min.css"/>
     
     {{ if .Site.Params.snowplow_endpoint}}{{- partial "snowplow.html" . }}{{ end }}
 
@@ -74,7 +75,8 @@
       <div class="app-header-social">
         {{ range . }}
           <a href="{{ .url }}" target="_blank" rel="noreferrer noopener">
-            {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
+            <title>{{ .name }}</title>
+            <i class="fa fa-{{ .subset }} fa-{{ .icon }}"></i>
           </a>
         {{ end }}
       </div>
