@@ -1,0 +1,41 @@
+<div class="thumbs">
+    Thanks for reading all the way through. Like what you read?
+    <div class="icon-block" onload="setThumb()">
+        <i class="fa fa-regular fa-thumbs-up" onclick="clickThumb('up')" id="thumbs-up"></i>
+        <i class="fa fa-regular fa-thumbs-down" onclick="clickThumb('down')" id="thumbs-down"></i>
+    </div>
+</div>
+
+<script>
+    function clickThumb(rating) {
+        const pageData = document.querySelector('body').dataset
+
+        const currentState = localStorage.getItem(`rating-${pageData.pageId}`,"")
+
+        if (currentState !== rating) {
+            icet('trackStructEvent', {
+            category: 'rating',
+            action: `thumbs-${rating}`,
+            property: pageData.pageId
+            });
+
+            localStorage.setItem(`rating-${pageData.pageId}`, rating)
+        } 
+
+        document.getElementById('thumbs-up').classList.add('fa-regular')
+        document.getElementById('thumbs-down').classList.add('fa-regular')
+        document.getElementById('thumbs-up').classList.remove('fa-solid')
+        document.getElementById('thumbs-down').classList.remove('fa-solid')
+        
+        document.getElementById(`thumbs-${rating}`).classList.add('fa-solid')
+        document.getElementById(`thumbs-${rating}`).classList.remove('fa-regular')
+
+    }
+
+    const pageData = document.querySelector('body').dataset
+    const currentState = localStorage.getItem(`rating-${pageData.pageId}`,"")
+    if (currentState == "up" || currentState == "down") {
+        document.getElementById(`thumbs-${currentState}`).classList.add('fa-solid')
+        document.getElementById(`thumbs-${currentState}`).classList.remove('fa-regular')
+    }
+</script>

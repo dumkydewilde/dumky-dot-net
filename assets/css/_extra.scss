@@ -172,3 +172,39 @@ blockquote {
     font-style: italic;
     color: $primary-color;
 }
+
+.thumbs {
+    padding-top: 32px;
+    color: $primary-color;
+    margin: auto;
+    text-align: center;
+    max-width: 300px;
+    vertical-align: middle;
+}
+
+.thumbs .fa-thumbs-up {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.thumbs .fa-thumbs-up:hover {
+    -webkit-transform: scaleX(-1.1) !important;
+    transform: scaleX(-1.1) !important;
+}
+
+.icon-block {
+    font-size: 3em;
+    display: block;
+}
+
+.icon-block .fa {
+    padding: 8px;
+}
+
+.icon-block .fa:hover {
+    padding: 8px;
+    color: $dark-color;
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

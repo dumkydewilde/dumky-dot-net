@@ -10,6 +10,10 @@
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}"/>
+
+    <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="/fontawesome/css/solid.min.css"/>
+    <link rel="stylesheet" href="/fontawesome/css/regular.min.css"/>
     
     {{ if .Site.Params.snowplow_endpoint}}{{- partial "snowplow.html" . }}{{ end }}
 
@@ -80,6 +84,7 @@
       {{ block "main" . }}
         {{ .Content }}
       {{ end }}
+      {{- partial "thumbs.html" . }}
     </main>
   </body>
 </html>
