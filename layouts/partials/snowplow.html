@@ -7,7 +7,9 @@ icet('newTracker', 'icet', '{{ .Site.Params.snowplow_endpoint }}', {
     appId: 'dumky-dot-net',
     discoverRootDomain: true,
     cookieSameSite: 'Lax', // Recommended
-    postPath: "/ice/t"
+    postPath: "/ice/t",
+    anonymousTracking: true, 
+    stateStorageStrategy: 'cookieAndLocalStorage'
 });
 icet('enableActivityTracking', {
   minimumVisitLength: 30,
