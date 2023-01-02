@@ -230,10 +230,12 @@ With our `cloudbuild.yaml` file done we can run `builds submit` and hopefully wa
 gcloud builds submit --substitutions=_BQ_DATASET="$BQ_DATASET" --region=europe-west1
 ```
 
-### Some final notes
+And that's it. Unless you want to change anything to your dbt models or packages, you don't have to run the cloud build again. So just sit back and watch your dashboard update!
+
+## Notes
 * You can [find the full code as used on my site on Github](https://github.com/dumkydewilde/snowplow-minimal/tree/main/snowplow-dbt)
 * Make sure to use Python 3.10 or lower when running dbt...
-c* Make sure the Snowplow package matches the dbt version e.g. pair dbt 1.3 with 12.2, but dbt 1.2 with 11.0
+* Make sure the Snowplow package matches the dbt version e.g. pair dbt 1.3 with 12.2, but dbt 1.2 with 11.0
 * I've had some issues downloading the Snowplow package before the Docker entrypoint, so it's been added in the entrypoint command instead.
 * Make sure you don't accidentally copy your local packages to your Docker container as it will double-install them and throw errors. You can use .dockerignore to exclude `dbt_packages/**/*`
 * Cloudbuild substitutions have to start with an underscore `_`
