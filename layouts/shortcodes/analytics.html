@@ -1,0 +1,211 @@
+{{ $w := default "100" (.Get 0) }}
+{{ $h := default "300" (.Get 1) }}
+{{ $chartType := default "" (.Get 2) }}
+{{ $seed := "foo" }}
+{{ $id := delimit (shuffle (split (md5 $seed) "" )) "" }}
+
+<div style="width: {{ $w }}%;height: {{ $h }}px;min-width: 400px;">
+    <canvas id="chartjs_{{ $chartType }}"></canvas>
+</div>
+<script type="text/javascript" src="/chartjs/chart.umd.js"></script>
+<script type="text/javascript">
+    analyticsBaseURL = window.analyticsBaseURL || "https://dumky.net" 
+    numDays = window.numDays || 42
+    if ("{{ $chartType }}" == "pageviews") {
+        fetch(`${analyticsBaseURL}/analytics/json/pageviews`)
+        .then((response) => response.json())
+        .then((data) => {
+            let options = {   
+                type: 'line',
+                data: {
+                    labels: data.map(el => { return el.date }).slice(0,numDays),
+                    datasets: [{
+                        label: 'Pageviews',
+                        data: data.map(el => { return el.pageviews }).slice(0,numDays),
+                        borderWidth: 3,
+                        borderColor: "#FA3600",
+                        backgroundColor: "#FA3600",
+                        hoverBackgroundColor: "#691100",
+                        hoverBorderColor: "#691100",
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Pageviews (previous period)',
+                        labels: data.map(el => { return el.date }).slice(numDays,numDays*2),
+                        data: data.map(el => { return el.pageviews }).slice(numDays,numDays*2),
+                        borderColor: "#FFDBD1",
+                        backgroundColor: "#FFDBD1",
+                        borderWidth: 2,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            align: "end",
+                            labels: {
+                                padding: 20,
+                                boxWidth: 30,
+                                boxHeight: 5
+                            }                
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                maxTicksLimit: 9,
+                                color: "#FA3600"
+                            },
+                            border: {
+                                display: false
+                            },
+                            grid: {
+                                display: false,
+                                color: "FFDBD1"
+                            }
+                        },
+                        y: {
+                            border: {
+                                display: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 3,
+                                color: "#FA3600"
+                            },
+                            grid: {
+                                color: "#FFDBD1",
+                            }
+                        }
+                    }
+                }
+            }
+            let ctx = document.getElementById('chartjs_{{ $chartType }}').getContext('2d');
+            new Chart(ctx, options);
+        });
+    } else if ( "{{ $chartType }}" == "referrers") {
+        fetch(`${analyticsBaseURL}/analytics/json/referrers`)
+        .then((response) => response.json())
+        .then((data) => {
+            let options = {   
+                type: 'bar',
+                data: {
+                    labels: data.map(el => { return el.refr_urlhost }).slice(0,10),
+                    datasets: [{
+                        label: 'Referrers',
+                        data: data.map(el => { return el.ref_count }).slice(0,10),
+                        borderWidth: 0,
+                        backgroundColor: "#FA3600",
+                        hoverBackgroundColor: "#691100",
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: {
+                            align: "end",
+                            labels: {
+                                padding: 20,
+                                boxWidth: 30,
+                                boxHeight: 5
+                            }                
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                maxTicksLimit: 9,
+                                color: "#FA3600"
+                            },
+                            border: {
+                                display: false
+                            },
+                            grid: {
+                                display: false,
+                                color: "FFDBD1"
+                            }
+                        },
+                        y: {
+                            border: {
+                                display: false
+                            },
+                            ticks: {
+                                color: "#FA3600"
+                            },
+                            grid: {
+                                color: "#FFDBD1",
+                            }
+                        }
+                    }
+                }
+            }
+            let ctx = document.getElementById('chartjs_{{ $chartType }}').getContext('2d');
+            new Chart(ctx, options);
+        })
+    } else if ( "{{ $chartType }}" == "topPosts") {
+        fetch(`${analyticsBaseURL}/analytics/json/topposts`)
+        .then((response) => response.json())
+        .then((data) => {
+            let multiLineLabel = (label) => {
+                const lineLength = 50
+                return label.length > lineLength ? [label.slice(0,lineLength), label.slice(lineLength, label.length)] : [label]
+            }
+            let options = {   
+                type: 'bar',
+                data: {
+                    labels: data.map(el => { return multiLineLabel(el.page_urlpath) }).slice(0,10),
+                    datasets: [{
+                        label: 'Views',
+                        data: data.map(el => { return el.post_views }).slice(0,10),
+                        borderWidth: 0,
+                        backgroundColor: "#FA3600",
+                        hoverBackgroundColor: "#691100",
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: {
+                            align: "end",
+                            labels: {
+                                padding: 20,
+                                boxWidth: 30,
+                                boxHeight: 5
+                            }                
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                maxTicksLimit: 9,
+                                color: "#FA3600"
+                            },
+                            border: {
+                                display: false
+                            },
+                            grid: {
+                                display: false,
+                                color: "FFDBD1"
+                            }
+                        },
+                        y: {
+                            border: {
+                                display: false
+                            },
+                            ticks: {
+                                color: "#FA3600"
+                            },
+                            grid: {
+                                color: "#FFDBD1",
+                            }
+                        }
+                    }
+                }
+            }
+            let ctx = document.getElementById('chartjs_{{ $chartType }}').getContext('2d');
+            new Chart(ctx, options);
+        })
+    }
+</script>
