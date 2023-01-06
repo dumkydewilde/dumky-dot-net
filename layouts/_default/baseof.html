@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/fontawesome/css/solid.min.css"/>
     <link rel="stylesheet" href="/fontawesome/css/regular.min.css"/>
     <link rel="stylesheet" href="/fontawesome/css/brands.min.css"/>
+
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>
     
     {{ if .Site.Params.snowplow_endpoint}}{{- partial "snowplow.html" . }}{{ end }}
 

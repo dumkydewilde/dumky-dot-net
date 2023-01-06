@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-uk"
 title = "Beyond Measure"
-theme = "m10c"
+theme = ["m10c"]
 paginate = 6
 
 [permalinks]
@@ -60,6 +60,11 @@ paginate = 6
 
 [menu]
     [[menu.main]]
+    identifier = "analytics"
+    name = "Analytics"
+    url = "/analytics/"
+    
+    [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
@@ -69,3 +74,6 @@ paginate = 6
     guessSyntax = true
     style = "dracula"
     tabWidth = 4
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
