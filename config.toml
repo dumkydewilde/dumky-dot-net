@@ -20,7 +20,7 @@ paginate = 6
     gtm_datalayer = "basic"
     gtm_endpoint = "https://gtm.dumky.net"
     snowplow_endpoint = "https://snow.dumky.net"
-    thumbs_up_description = "Wow, you made it all the way down! Let me know if you liked it. And feel free to [buy me a coffee](https://www.buymeacoffee.com/dumky) if you did."
+    thumbs_up_description = "Wow, you made it all the way down, let me know if you liked it!"
     [params.style]
         darkestColor = "#240800"
         darkColor = "#691100"
