@@ -18,10 +18,10 @@
             let options = {   
                 type: 'line',
                 data: {
-                    labels: data.map(el => { return el.date }).slice(0,numDays),
+                    labels: data.map(el => { return el.date }).slice(0,numDays).reverse(),
                     datasets: [{
                         label: 'Pageviews',
-                        data: data.map(el => { return el.pageviews }).slice(0,numDays),
+                        data: data.map(el => { return el.pageviews }).slice(0,numDays).reverse(),
                         borderWidth: 3,
                         borderColor: "#FA3600",
                         backgroundColor: "#FA3600",
@@ -31,8 +31,8 @@
                     },
                     {
                         label: 'Pageviews (previous period)',
-                        labels: data.map(el => { return el.date }).slice(numDays,numDays*2),
-                        data: data.map(el => { return el.pageviews }).slice(numDays,numDays*2),
+                        labels: data.map(el => { return el.date }).slice(numDays,numDays*2).reverse(),
+                        data: data.map(el => { return el.pageviews }).slice(numDays,numDays*2).reverse(),
                         borderColor: "#FFDBD1",
                         backgroundColor: "#FFDBD1",
                         borderWidth: 2,
