@@ -8,7 +8,7 @@ icet('newTracker', 'icet', '{{ .Site.Params.snowplow_endpoint }}', {
     discoverRootDomain: true,
     cookieSameSite: 'Lax', // Recommended
     postPath: "/ice/t",
-    anonymousTracking: true, 
+    anonymousTracking: { withSessionTracking: true, withServerAnonymisation: true },
     stateStorageStrategy: 'cookieAndLocalStorage'
 });
 icet('enableActivityTracking', {
