@@ -208,3 +208,161 @@ body, .app-header {
     margin-top: -2px;
     margin-left: 60%;
   }
+
+/* TABLES */
+.table {
+width: 100%;
+margin: 2em 0;
+color: #212529;
+}
+
+.table th,
+.table td {
+padding: 0.75rem;
+vertical-align: top;
+border-top: 1px solid $light-color;
+text-align: left;
+}
+
+.table thead {
+    background-color: $light-color;
+}
+
+.table thead th {
+vertical-align: bottom;
+border-bottom: 0;
+}
+
+.table tbody + tbody {
+border-top: 2px solid $light-color;
+}
+
+.table-sm th,
+.table-sm td {
+padding: 0.3rem;
+}
+
+.table-bordered {
+border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+border-bottom-width: 2px;
+}
+
+.table-borderless th,
+.table-borderless td,
+.table-borderless thead th,
+.table-borderless tbody + tbody {
+border: 0;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+color: #212529;
+background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-light,
+.table-light > th,
+.table-light > td {
+background-color: #fdfdfe;
+}
+
+.table-light th,
+.table-light td,
+.table-light thead th,
+.table-light tbody + tbody {
+border-color: #fbfcfc;
+}
+
+.table-hover .table-light:hover {
+background-color: #ececf6;
+}
+
+.table-hover .table-light:hover > td,
+.table-hover .table-light:hover > th {
+background-color: #ececf6;
+}
+
+.table-dark,
+.table-dark > th,
+.table-dark > td {
+background-color: #c6c8ca;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th,
+.table-dark tbody + tbody {
+border-color: #95999c;
+}
+
+.table-hover .table-dark:hover {
+background-color: #b9bbbe;
+}
+
+.table-hover .table-dark:hover > td,
+.table-hover .table-dark:hover > th {
+background-color: #b9bbbe;
+}
+
+.table-active,
+.table-active > th,
+.table-active > td {
+background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-hover .table-active:hover {
+background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-hover .table-active:hover > td,
+.table-hover .table-active:hover > th {
+background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table .thead-dark th {
+color: #fff;
+background-color: #343a40;
+border-color: #454d55;
+}
+
+.table .thead-light th {
+color: #495057;
+background-color: #e9ecef;
+border-color: #dee2e6;
+}
+
+.table-dark {
+color: #fff;
+background-color: #343a40;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+border-color: #454d55;
+}
+
+.table-dark.table-bordered {
+border: 0;
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-dark.table-hover tbody tr:hover {
+color: #fff;
+background-color: rgba(255, 255, 255, 0.075);
+}

@@ -1,6 +1,6 @@
 ---
 title: "Create your own API from BigQuery data in minutes with SQL exports and Cloudflare Workers"
-date: "2022-12-31"
+date: "2023-02-07"
 tags: 
   - "SQL"
   - "Cloudflare Workers"
