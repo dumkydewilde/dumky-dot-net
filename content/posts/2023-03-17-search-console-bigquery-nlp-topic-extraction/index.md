@@ -61,8 +61,7 @@ SELECT
 FROM test_cases
 ```
 
-Simple enough right? You'll see that it doesn't handle JSON arrays properly, but handling that in JavaScript would be a
-lot easier than it is in SQL. Now that you get the concept, young padawan, we can move on to the next step.
+Simple enough right? Now that you get the concept, young padawan, we can move on to the next step.
 
 ## NLP Topic Extraction with the JavaScript Compromise NLP library
 
