@@ -33,33 +33,31 @@ least access to a domain in Google Search Console. So on to number two!
 BigQuery (and some of the other cloud datawarehouses too) will allow you to write JavaScript directly into a custom 
 function (UDF). That makes it really easy to do things that are usually are hard in SQL, like using `for` loops or
 parsing JSON for example. Before we dive 🤿 into full-on text processing, let's look at a simpler example first. The 
-following code first defines a function to retrieve the keys of a JSON object and then applies that function to a set 
-of rows returning an array with all the keys.
+following is a totally useless fuction —What, you don't need to know if the number of characters is odd or even on a 
+daily basis?— but it does show some of the fun JavaScript stuff that would be really hard with SQL.
 
 ```SQL
-CREATE TEMP FUNCTION json_keys(jsonString STRING)
+CREATE TEMP FUNCTION even_odd_characters(arr ARRAY<STRING>)
 RETURNS ARRAY<STRING>
 LANGUAGE js 
 AS 
 r"""
-try {
-  return Object.keys(JSON.parse(jsonString))
-} catch {
-  return null
-}  
+return (arr || []).map((el, i) => {
+    if (i === 1) {
+      return "second item!" // Index based loops in SQL? ❌
+    } else {
+      return el.length % 2 ? "even" : "odd" // Ternary operator 🤯
+    }
+})
 """;
 
 WITH test_cases AS (
   SELECT NULL as s UNION ALL
-  SELECT '' as s UNION ALL
-  SELECT ',' as s UNION ALL
-  SELECT '{"foo" : "bar", "fizz": "buzz"}' as s UNION ALL
-  SELECT '[{"foo" : "bar"}, {"fizz": "buzz"}]' as s UNION ALL
-  SELECT '{"foo" : { "fizz" : "buzz" } }' as s
+  SELECT ['foo', 'bar', 'fizz', 'buzz', 'quetzalcoatl'] as s
 )
 
 SELECT
-  json_keys(s)
+  even_odd_characters(s)
 FROM test_cases
 ```
 
