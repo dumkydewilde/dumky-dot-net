@@ -66,8 +66,9 @@ Simple enough right? Now that you get the concept, young padawan, we can move on
 ## NLP Topic Extraction with the JavaScript Compromise NLP library
 
 Our text-processing function uses a [JavaScript library called compromise](https://github.com/spencermountain/compromise).
-To use this library in our function we can just `npm install` it unfortunately. We'll have to upload it into a Google
-Cloud Storage bucket from where we can reference it. We can do this with an `OPTIONS` statement. The Compromise library 
+To use this library in our function we can just `npm install` it unfortunately. We'll have to 
+[download the 13.11.4 release](https://github.com/spencermountain/compromise/releases/tag/13.11.4) and upload it into 
+a Google Cloud Storage bucket from where we can reference it. We can do this with an `OPTIONS` statement. The Compromise library 
 abstracts away a lot of the boring stuff but basically it is a lightweight approach to splitting sentences up into
 parts, that is words or n-grams. Those parts will then get tagged as having a certain role within their context, what
 we call part-of-speech (POS) tagging.
@@ -81,7 +82,7 @@ to retrieve and what output (e.g. `doc.nouns().out("array")`).
 CREATE TEMP FUNCTION nlp_compromise(text STRING)
 RETURNS STRUCT<nouns ARRAY<STRING>, verbs ARRAY<STRING>, topics ARRAY<STRING>>
 LANGUAGE js 
-OPTIONS (library="gs://<my-bucket>/js/compromise-13.11.4.min.js") -- v14 is not currently compatible with BigQuery RegEx
+OPTIONS (library="gs://<my-bucket>/compromise-13.11.4.min.js") -- v14 is not currently compatible with BigQuery RegEx
 AS r"""
   const doc = nlp(text).normalize()
 
@@ -107,11 +108,10 @@ with query_data as (
     select 
         format_date("%Y%m", data_date) year_month, 
         query, 
-        sum(impressions) impr, 
+        sum(impressions) impressions, 
         sum(clicks) clicks 
     from `<MY_PROJECT>.searchconsole.searchdata_site_impression` 
     where clicks > 0 and query is not null
-    group by query -- aggregate countries and devices
   )
 
 select 
@@ -119,7 +119,7 @@ select
   nouns, 
   array_agg(query) original_queries, 
   sum(clicks) clicks, 
-  sum(impressions) impr 
+  sum(impressions) impressions 
 from query_data, unnest(nlp_compromise(query).nouns) as nouns 
 group by 1, 2 
 order by 1 desc, 4 desc
@@ -189,7 +189,7 @@ Below is the final function.
 
 ```
 
-And there you have it, a simple but effective way to group your Search Console queries by topic. Of course a JavaScript
+And there you have it, a simple but effective way to group your Search Console queries by either nouns, verbs, topic or tool. Of course a JavaScript
 library for NLP has its limitations. If you want to further improve this setup you can look into using the BigQuery ML
 features that can not only help you classify and tag your texts with machine learning, but you could also use a 
 clustering approach —[like k-means](https://cloud.google.com/bigquery-ml/docs/kmeans-tutorial)— to group similar topics together.
