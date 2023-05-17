@@ -3,9 +3,9 @@ title: "Automatically Lint and Publish your Snowplow Schemas with Github Actions
 date: "2023-05-17"
 tags: 
   - Snowplow
-  - JSONSchema
-  - Github Actions
-  - YAML
+  - json-schema
+  - github-actions
+  - yaml
 description: "Snowplow schemas are a great way to codify expected data in JSON format. Using Github actions you can 
 make them eevn more powerful by automatically checking for typos, validity, and other errors as well as directly
 publishing them to your production environment with no manual action." 
