@@ -5,11 +5,10 @@
 <script>
 icet('newTracker', 'icet', '{{ .Site.Params.snowplow_endpoint }}', {
     appId: 'dumky-dot-net',
-    discoverRootDomain: true,
     cookieSameSite: 'Lax', // Recommended
     postPath: "/ice/t",
-    anonymousTracking: { withSessionTracking: true, withServerAnonymisation: true },
-    stateStorageStrategy: 'cookieAndLocalStorage'
+    session: true,
+    browser: true                    
 });
 icet('enableActivityTracking', {
   minimumVisitLength: 30,
