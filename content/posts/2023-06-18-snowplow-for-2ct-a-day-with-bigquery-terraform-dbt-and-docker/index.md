@@ -37,7 +37,7 @@ You can go very deep and very wide with these topics, but I think this post migh
 *You'll end up with a fully customisable dashboard of your web analytics data.*
 
 
-## What's an analytics pipeline anyway?
+# What's an analytics pipeline anyway?
 I've written before about [why web analytics is a mess](/posts/why-web-analytics-is-still-a-mess-in-2023/) but a big part of the confusion is that a web analytics pipeline just does many things all at once. To name a few:
 - Provide trackers for websites, apps, backend-systems
 - Collect data that can be highly unpredictable and infrequent with high accuracy
@@ -53,7 +53,7 @@ But, if you've seen or worked with Snowplow, —especially the open source versi
 - How can we manage something that's actually costing money in a way that's pleasant and maintainable?
 - Why the hell do I need all these weirdly named tools like Docker and Terraform if I'm a web analyst?
 
-## The components of a minimal Snowplow setup
+# The components of a minimal Snowplow setup
 To understand how we can adjust the Snowplow pipeline to our liking we have to understand what the actual components are that we'll be using (in parts). So let's go through them real quick before we dive into the technical details. If you're bored already, just imagine that they are the codenames of a crew that's about to pull off a bank heist.
 - **The Tracker**: in our case a piece of JavaScript on our website that collects user data (pageviews, heartbeats, clicks, etc.) and sends them to an endpoint (URL) of our choice.
 - **The Collector**: A server that has to be always available to acknowledge incoming requests  and store them for later processing
@@ -75,11 +75,11 @@ The collector serves the very specific need of being the entry point for outside
 - It has to be easy to manage
 
 Considering these requirements we have a couple of different cloud services and strategies we can use as options. First thing we should note is that one of the easiest ways to run our collector (and the other services) is to use the Docker container, in other words, a pre-packaged solution that runs anywhere and only requires us to pass through a few configuration options. We'll use the Google Cloud Platform terminology here, but of course you can easily swap similar services for the AWS alternatives (EC2, Fargate, Lambda, S3, etc.)
-- Load balancer + Compute Engine: This is the classic Snowplow setup with one or multiple servers and good if you run a worldwide ecommerce business, but definitely not good if you want to minimise costs and complexity.
-- Compute Engine with public IP: Could work in theory, but a lot harder in terms of scaling and security
+- *Load balancer + Compute Engine*: This is the classic Snowplow setup with one or multiple servers and good if you run a worldwide ecommerce business, but definitely not good if you want to minimise costs and complexity.
+- *Compute Engine with public IP*: Could work in theory, but a lot harder in terms of scaling and security
 - Cloud Run: An easy way to run Docker containers serverless with an HTTP endpoint. That means very little effort in deployment and scaling up and down, but at a potential higher cost.
-- Cloud Functions: A lighter weight version of Cloud Run with an HTTP endpoint using only a program function instead of the full docker container. A little more complex due to the lack of Docker support and actually has the same pricing (and underlying architecture) as Cloud Run.
-- Pixel + Cloud Storage logs: You can set up usage logging on Google Cloud Storage allowing you to track GET requests to a pixel. It's cheap, but misses a lot of flexibility and benefits of using the Snowplow JavaScript tracker's POST requests as well as making it more complex to forward these logs to the rest of the Snowplow pipeline.
+- *Cloud Functions*: A lighter weight version of Cloud Run with an HTTP endpoint using only a program function instead of the full docker container. A little more complex due to the lack of Docker support and actually has the same pricing (and underlying architecture) as Cloud Run.
+- *Pixel + Cloud Storage logs*: You can set up usage logging on Google Cloud Storage allowing you to track GET requests to a pixel. It's cheap, but misses a lot of flexibility and benefits of using the Snowplow JavaScript tracker's POST requests as well as making it more complex to forward these logs to the rest of the Snowplow pipeline.
 
 With roughly 100 minutes and 67000 requests free per day, Cloud Run seems like the obvious choice for our collector, especially since we can use distroless versions of Docker images, that are super small and actually contain only the bare minimum required to run our collector's functions.
 
@@ -104,7 +104,7 @@ For the loader we have a similar situation to the enricher, but the workload is 
 Our model is a different beast altogether. We will use a [Snowplow-made package](https://docs.snowplow.io/docs/modeling-your-data/modeling-your-data-with-dbt/) with dbt. Dbt is a Python based tool to easily transform data based on good old SQL, but with the software development best practices of using version control and reusability of components. This makes it easy to use a package like the one from Snowplow on standardised components like pageviews, sessions, or media but still have the flexibility to add in custom models, combine with other source data or build reporting tables and aggregations on top of packages.
 However, running dbt in our pipeline is not as easy as it looks. I [wrote before](https://www.dumky.net/posts/dbt-in-a-box-using-google-cloud-run-and-bigquery-to-run-your-dbt-sql-models-from-a-docker-container/) about running dbt in a Docker container, but it is not easy to just run a random dbt package on our data. We need to be able to add and configure certain variables and maybe add in some models on top. Therefore we need to at least be able to connect it to a repository with a dbt project. At the same time we'd like to avoid complexity by creating a seperate pipeline for dbt so we'll still run dbt on Cloud Run on the same schedule as the other jobs. 
 
-## Let's Terraform this baby
+# Let's Terraform this baby
 As I described this setup to someone interested in working with Snowplow, they said: "This is not a Snowplow introduction it's a Terraform introduction." And I will admit: they're not wrong. These days it's hard to avoid any kind of cloud infrastructure if you want to own and govern your own data pipelines. And it's even harder to avoid Terraform if you want to deploy and govern that cloud infrastructure. 
 Terraform is to cloud infrastructure what dbt is to data models. And if that sentence doesn't mean anything to you let me summarise it like this: we used to click everything together ("ClickOps") from servers to hard drives to data models and data ingestion pipelines in web interfaces that would change right underneath us, but we've since moved to robust integrations based on version controlled code (DevOps) with the ability to deploy and test across different environments like development and production with ease. In practice all of that means: less downtime, less incidents, higher data quality. Unless of course you are just starting out, because in that case all of these tools may seem overwhelming.
 
@@ -315,7 +315,7 @@ resource "google_cloud_scheduler_job" "jobs_scheduler" {
 ```
 
 
-## Transforming Snowplow data with dbt
+# Transforming Snowplow data with dbt
 If you haven't heard of dbt before, it's a tool that helps you define data models through SQL. It is basically SQL statements, but the generation of those SQL statements is version controlled and dynamic with a language called Jinja. That means you can use variables and for-loops to generate SQL and create nice lineage graphs between all the models you generate.
 
 That may still sound like mumbo-jumbo, but what it has done is create an ecosystem of tools and packages that help you build meaningful models on top of your raw data from let's say Facebook Ads or Spotify to query them more easily. In this case we can use a dbt package called `snowplow_web` from Snowplow to create pageview and session tables for us.  The package takes care of all the aggregations like average time on page for pageviews or pages per session, that means that out of the box we can go from raw data to a bunch of tables to basically recreate reports around session, users and pageviews that you may be familiar with from Google Analytics.
@@ -417,10 +417,10 @@ The derived tables are pretty self-explanatory, the scratch and manifest tables 
 
 And that's all folks. You have your session tables available, all ready for some fancy visualisations and showing of to your mom how your visitor chart is going up and to the right 📈!
 
-## Continuing the conversation
+# Continuing the conversation
 This has been a massive post, it'd great if you could let me know if you enjoyed it, if you're missing anything or anything else you'd like to share. You can reach out to me on [LinkedIn](https://www.linkedin.com/in/dumkydewilde/) or [Twitter](https://www.twitter.com/dumkydewil), but what would be even greater is to kindle the discussion on the [Snowplow Discourse](https://discourse.snowplow.io/) which is a great place to discuss everything Snowplow with a group of likeminded people.
 
-## Notes and Resources
+# Notes and Resources
 
 - Google Cloud Hosting Options overview: https://cloud.google.com/hosting-options
 - https://cloud.google.com/storage/docs/access-logs
