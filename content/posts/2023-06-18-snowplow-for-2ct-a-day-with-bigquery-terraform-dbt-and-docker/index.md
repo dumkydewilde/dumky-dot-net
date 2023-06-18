@@ -428,3 +428,4 @@ This has been a massive post, it'd great if you could let me know if you enjoyed
 - If you want to store your enrichments seperately you could consider either using FUSE to mount a Cloud Storage bucket to a Cloud Run Job, or using some form of long-term disk for Compute Engine
 - [Terraform Registry](https://registry.terraform.io/) is where you'll find documentation for most of the resources and [modules](https://registry.terraform.io/browse/modules)(pre-made combinations of resources)
 - You can basically only use Docker Hub images for Google Cloud Run unless you want to add them to your own artifact registry.  Github container registry (`ghcr.io` ) images, like the ones from dbt, are not supported.
+- You can have a look at the [final dashboard on Looker Studio](https://lookerstudio.google.com/reporting/4933e82f-b45f-4e53-a23f-955f820f7113).
