@@ -55,11 +55,11 @@ But, if you've seen or worked with Snowplow, —especially the open source versi
 
 ## The components of a minimal Snowplow setup
 To understand how we can adjust the Snowplow pipeline to our liking we have to understand what the actual components are that we'll be using (in parts). So let's go through them real quick before we dive into the technical details. If you're bored already, just imagine that they are the codenames of a crew that's about to pull off a bank heist.
-- The Tracker: in our case a piece of JavaScript on our website that collects user data (pageviews, heartbeats, clicks, etc.) and sends them to an endpoint (URL) of our choice.
-- The Collector: A server that has to be always available to acknowledge incoming requests  and store them for later processing
-- The Enricher: validates raw events, potentially adding in small enrichments like removing PII, adding geo information, identifying bot traffic, etc. To validate events it has to make use of a schema registry, basically a repository of lists that tell the enricher what to expect of incoming data (for example a URL or user-agent string): what attributes can be expected, how long should they be, should they match a specific type or format, etc.
-- The Loader: turns raw event data into a format that can be loaded into your data warehouse —in this case BigQuery— and makes sure the database is updated if for example new schemas are used.
-- The Model:  allows us to easily transform raw event data into meaningful practical statistics like pageviews, sessions, engagement, and users. 
+- **The Tracker**: in our case a piece of JavaScript on our website that collects user data (pageviews, heartbeats, clicks, etc.) and sends them to an endpoint (URL) of our choice.
+- **The Collector**: A server that has to be always available to acknowledge incoming requests  and store them for later processing
+- **The Enricher**: validates raw events, potentially adding in small enrichments like removing PII, adding geo information, identifying bot traffic, etc. To validate events it has to make use of a schema registry, basically a repository of lists that tell the enricher what to expect of incoming data (for example a URL or user-agent string): what attributes can be expected, how long should they be, should they match a specific type or format, etc.
+- **The Loader**: turns raw event data into a format that can be loaded into your data warehouse —in this case BigQuery— and makes sure the database is updated if for example new schemas are used.
+- **The Model**:  allows us to easily transform raw event data into meaningful practical statistics like pageviews, sessions, engagement, and users. 
 
 ![Image of 5 people planning a bank heist generated with DALL-E](images/dalle2-bank-heist-planning-scene.jpg) 
 
