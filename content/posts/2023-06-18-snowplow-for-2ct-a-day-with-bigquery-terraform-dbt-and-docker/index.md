@@ -14,7 +14,7 @@ description: "Running Snowplow for your (web) analytics pipeline to expensive? H
 
 With Google Analytics' sub-par performance over the last few years, you may have been on the lookout for alternatives or just overwhelmed with the amount of LinkedIn posts claiming to have the ultimate list of alternatives. In any case, many of us have stopped a moment to think: "What do I actually want from an analytics tool?" I don't know about you, but I want a cheap, customisable, self-hosted solution for my blog that is pleasant to work with. Let's see if we can use Snowplow for that!
 
-> ⚠️ First up a little warning. This is going to be a long post as we'll cover a lot of ground. It is basically simultaneously an introduction to (web) analytics infrastructure, using infrastructure-as-code (Terraform) and dbt and your more then welcome to skip back and forth between parts. 
+> ⚠️ First up a little warning. This is going to be a long post as we'll cover a lot of ground. It is basically simultaneously an introduction to (web) analytics infrastructure, infrastructure-as-code (Terraform) and data modelling with dbt. Feel free to skip back and forth between parts. 
 
 ### What is covered
 In this post we'll cover the following topics (click if you'd like to skip ahead).
