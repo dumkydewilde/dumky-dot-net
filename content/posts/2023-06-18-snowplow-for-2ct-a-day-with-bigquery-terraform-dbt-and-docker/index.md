@@ -316,6 +316,9 @@ resource "google_cloud_scheduler_job" "jobs_scheduler" {
 ```
 
 
+If you've run `terraform apply -var-file=terra.tfvars` and set everything up there's only one manual step left. You'll have to run the `mutator-create-job` once to create the initial BigQuery events table from [the Cloud Run Jobs UI](https://console.cloud.google.com/run/jobs).
+
+
 # Transforming Snowplow data with dbt
 If you haven't heard of dbt before, it's a tool that helps you define data models through SQL. It is basically SQL statements, but the generation of those SQL statements is version controlled and dynamic with a language called Jinja. That means you can use variables and for-loops to generate SQL and create nice lineage graphs between all the models you generate.
 
@@ -423,6 +426,7 @@ This has been a massive post, it'd great if you could let me know if you enjoyed
 
 # Notes and Resources
 
+- Not seeing anything appear? Make sure you ran the `mutator-create-job` to create the initial table in BigQuery. I am still looking to improve this step.
 - Google Cloud Hosting Options overview: https://cloud.google.com/hosting-options
 - https://cloud.google.com/storage/docs/access-logs
 - You could in theory use the enricher as a collector on Cloud Run, but I have not tried this yet.
