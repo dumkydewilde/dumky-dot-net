@@ -14,7 +14,7 @@ description: "Running Snowplow for your (web) analytics pipeline to expensive? H
 
 With Google Analytics' sub-par performance over the last few years, you may have been on the lookout for alternatives or just overwhelmed with the amount of LinkedIn posts claiming to have the ultimate list of alternatives. In any case, many of us have stopped a moment to think: "What do I actually want from an analytics tool?" I don't know about you, but I want a cheap, customisable, self-hosted solution for my blog that is pleasant to work with. Let's see if we can use Snowplow for that!
 
-> ⚠️ First up a little warning. This is going to be a long post as we'll cover a lot of ground. It is basically simultaneously an introduction to (web) analytics infrastructure, infrastructure-as-code (Terraform) and data modelling with dbt. Feel free to skip back and forth between parts. 
+> ⚠️ Heads up for a little warning. This is going to be a long post as we'll cover a lot of ground. First of all It is basically simultaneously an introduction to (web) analytics infrastructure, infrastructure-as-code (Terraform) and data modelling with dbt. Feel free to skip back and forth between parts. Secondly, the €0.02 is only applicable to small blogs with intermittent traffic and intended as a way to play with the actual Snowplow pipeline setup. On large sites with continuous traffic, this setup will cost you more than default setup described in the Snowplow docs.
 
 ### What is covered
 In this post we'll cover the following topics (click if you'd like to skip ahead).
@@ -27,11 +27,12 @@ You can find all of the code in this [snowplow-serverless repository on Github](
 
 ### Who is this for? 
 You can go very deep and very wide with these topics, but I think this post might be for you if:
-- You are a webanalyst or marketing analyst who wants to better understand how data is captured and transformed behind the scenes of whatever analytics tool you're working with
+- You are a web analyst or marketing analyst who wants to better understand how data is captured and transformed behind the scenes of whatever analytics tool you're working with
 - You're an analyst, analytics team lead or marketing manager who's tasked with setting up a new analytics implementation and wants to understand more of the technical options out there to cut through the marketing BS of analytics vendors.
 - You're a data engineer who's more or less familiar with Terraform but hasn't worked with web analytics pipelines before.
 - You're an analytics engineer who's worked with dbt but wants to better understand Terraform or web analytics pipelines.
-- You're anywhere in between or beyond and either just enjoy learning or the pain and frustration of working through problems, tools and technologies that you know nothing about
+- You're a cheap hacker who likes to play with toy data pipelines for fun. (<— that's me 👋)
+- You're anywhere in between or beyond and either just enjoy learning or the pain and frustration of working through problems, tools and technologies that you know nothing about.
 
 ![What the final result might look like](images/final-report-overview.png)
 *You'll end up with a fully customisable dashboard of your web analytics data.*
@@ -47,7 +48,7 @@ I've written before about [why web analytics is a mess](/posts/why-web-analytics
 
 Universal Analytics allowed you to do much of the above for free, but we have learned that it doesn't mean there are no costs involved. With new and changing privacy laws, increased complexity of setting up and maintaining analytics tools we've come to appreciate the ability to take matters into our own hands. We want to be able to host our own solutions, while still having the reliability of a well-engineered tool. We want to have the customisation and flexibility to adjust to the uniqueness of our business, while still having efficient, standardised reports. Well, this is exactly what makes Snowplow so damn good. 
 
-But, if you've seen or worked with Snowplow, —especially the open source version— your first instinct may be to think that it's just a lot of different instances burning through your cash and not something to use for your own blog for example. And that's partly right, but today we'll look at how start playing around with Snowplow for €0.02/day on Google Cloud Platform and discuss:
+But, if you've seen or worked with Snowplow —especially the open source version— your first instinct may be to think that it's just a lot of different instances burning through your cash and not something to use for your own blog for example. And that's partly right, but today we'll look at how to start playing around with Snowplow for €0.02/day on Google Cloud Platform and discuss:
 - What are the components of a Snowplow pipeline and which ones do we actually need?
 - What are the choices we can make regarding cost/quality/performance and what is the lowest cost we can get away with?
 - How can we manage something that's actually costing money in a way that's pleasant and maintainable?
@@ -81,10 +82,10 @@ Considering these requirements we have a couple of different cloud services and 
 - *Cloud Functions*: A lighter weight version of Cloud Run with an HTTP endpoint using only a program function instead of the full docker container. A little more complex due to the lack of Docker support and actually has the same pricing (and underlying architecture) as Cloud Run.
 - *Pixel + Cloud Storage logs*: You can set up usage logging on Google Cloud Storage allowing you to track GET requests to a pixel. It's cheap, but misses a lot of flexibility and benefits of using the Snowplow JavaScript tracker's POST requests as well as making it more complex to forward these logs to the rest of the Snowplow pipeline.
 
-With roughly 100 minutes and 67000 requests free per day, Cloud Run seems like the obvious choice for our collector, especially since we can use distroless versions of Docker images, that are super small and actually contain only the bare minimum required to run our collector's functions.
+With roughly 100 minutes and 67000 requests free per day, Cloud Run seems like the obvious choice for our collector, especially since we can use distroless versions of Docker images, that are super small and actually contain only the bare minimum required to run our collector's functions. There is one downside to this set up and that is that Cloud Run does have a cold start of up to 20 seconds. In practice I've seen this vary between 2-20 seconds, but it does mean hits are potentially dropped if it takes too long. Personally I've found this setup reliable enough for the cost benefit, but of course you'll have to make your own trade-offs. 
 
 ### The Enricher
-Interestingly enough the enricher's requirements are actually quite different from the collector. It doesn't have to be alway online. As a matter of fact, this will be one of our biggest cost savers. By only running the enricher (and similarly the loader) in batches at times that are actually useful for us we save an enormous amount of costs. If you don't make decisions in real-time, your pipeline definitely doesn't need to be real-time. Considering that you don't run your personal blog with a globally distributed team of people, you'll likely only need updates to your analytics a few times a day. Expressed in my favourite cron schedule this becomes `11 9-19/3 * * *`,  in other words: run every three hours between 9am and 7pm. If you really want to save you could also exclude weekends (`11 9-19/3 * * 1-5`) although in that case your initial run on Monday morning might take a bit longer. 
+Interestingly enough the enricher's requirements are actually quite different from the collector. It doesn't have to be always online. As a matter of fact, this will be one of our biggest cost savers. By only running the enricher (and similarly the loader) in batches at times that are actually useful for us we save an enormous amount of costs. If you don't make decisions in real-time, your pipeline definitely doesn't need to be real-time. Considering that you don't run your personal blog with a globally distributed team of people, you'll likely only need updates to your analytics a few times a day. Expressed in my favourite cron schedule this becomes `23 8-21/5 * * *`,  in other words: run every three hours between 9am and 7pm. If you really want to save you could also exclude weekends (`23 8-21/5 * * 1-5`) although in that case your initial run on Monday morning might take a bit longer. 
 
 Aside from my banter about cron schedules, the requirements for the enricher are something like:
 - Process batches of Pub/Sub messages
@@ -415,7 +416,7 @@ Finally we run `dbt deps` to install the Snowplow package defined in `packages.y
 
 The derived tables are pretty self-explanatory, the scratch and manifest tables contain respectively the base tables to calculate the aggregate derived tables and a state of not just the last time the pipeline was processed, but also a state of ongoing user sessions. That means that sessions will not just restart at midnight as was the case for Google Universal Analytics, but you can be very flexible, create your own session definition and let your user's sessions run for days.
 
-And that's all folks. You have your session tables available, all ready for some fancy visualisations and showing of to your mom how your visitor chart is going up and to the right 📈! Of course the true value of this setup is not just in this data, but customising and combining this data with additional data sources like for example Google Search Console data.
+And that's all folks. You have your session tables available, all ready for some fancy visualisations and showing off to your mom how your visitor chart is going up and to the right 📈! Of course the true value of this setup is not just in this data, but customising and combining this data with additional data sources like for example Google Search Console data.
 
 # Continuing the conversation
 This has been a massive post, it'd great if you could let me know if you enjoyed it, if you're missing anything or anything else you'd like to share. You can reach out to me on [LinkedIn](https://www.linkedin.com/in/dumkydewilde/) or [Twitter](https://www.twitter.com/dumkydewilde), but what would be even greater is to kindle the discussion on the [Snowplow Discourse](https://discourse.snowplow.io/) which is a great place to discuss everything Snowplow with a group of likeminded people.
@@ -426,6 +427,6 @@ This has been a massive post, it'd great if you could let me know if you enjoyed
 - https://cloud.google.com/storage/docs/access-logs
 - You could in theory use the enricher as a collector on Cloud Run, but I have not tried this yet.
 - If you want to store your enrichments seperately you could consider either using FUSE to mount a Cloud Storage bucket to a Cloud Run Job, or using some form of long-term disk for Compute Engine
-- [Terraform Registry](https://registry.terraform.io/) is where you'll find documentation for most of the resources and [modules](https://registry.terraform.io/browse/modules)(pre-made combinations of resources)
+- [Terraform Registry](https://registry.terraform.io/) is where you'll find documentation for most of the resources and [modules](https://registry.terraform.io/browse/modules) (pre-made combinations of resources)
 - You can basically only use Docker Hub images for Google Cloud Run unless you want to add them to your own artifact registry.  Github container registry (`ghcr.io` ) images, like the ones from dbt, are not supported.
 - You can have a look at the [final dashboard on Looker Studio](https://lookerstudio.google.com/reporting/4933e82f-b45f-4e53-a23f-955f820f7113).
