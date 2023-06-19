@@ -415,7 +415,7 @@ Finally we run `dbt deps` to install the Snowplow package defined in `packages.y
 
 The derived tables are pretty self-explanatory, the scratch and manifest tables contain respectively the base tables to calculate the aggregate derived tables and a state of not just the last time the pipeline was processed, but also a state of ongoing user sessions. That means that sessions will not just restart at midnight as was the case for Google Universal Analytics, but you can be very flexible, create your own session definition and let your user's sessions run for days.
 
-And that's all folks. You have your session tables available, all ready for some fancy visualisations and showing of to your mom how your visitor chart is going up and to the right 📈!
+And that's all folks. You have your session tables available, all ready for some fancy visualisations and showing of to your mom how your visitor chart is going up and to the right 📈! Of course the true value of this setup is not just in this data, but customising and combining this data with additional data sources like for example Google Search Console data.
 
 # Continuing the conversation
 This has been a massive post, it'd great if you could let me know if you enjoyed it, if you're missing anything or anything else you'd like to share. You can reach out to me on [LinkedIn](https://www.linkedin.com/in/dumkydewilde/) or [Twitter](https://www.twitter.com/dumkydewil), but what would be even greater is to kindle the discussion on the [Snowplow Discourse](https://discourse.snowplow.io/) which is a great place to discuss everything Snowplow with a group of likeminded people.
