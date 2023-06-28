@@ -11,6 +11,9 @@ tags:
   - "cloudbuild"
 description: "Dbt is a great tool for data transformation. Snowplow is great for collecting web analytics data. What if you could harvest the power of both for just a few cents a day by running dbt in a Docker container on Google Cloud Run Jobs?" 
 ---
+{{< box important >}}
+*Update June 2023*: I have created a [massive blog post](/posts/own-your-web-analytics-pipeline-for-0.02-per-day-snowplow-terraform-dbt-bigquery-and-docker/) on how to get started with Snowplow, Terraform, Docker and dbt that has some more insights on how to best run dbt in a container as well. This post is still valid, but know that there's more if you are interested.
+{{< /box >}}
 [Dbt](https://docs.getdbt.com/docs/introduction) is a great tool to transform data in your data warehouse. It allows you to version control the rules and business logic you want to apply to your raw data. However, it can be tricky to set up if you're new to it. For our use case today we'll transform raw web analytics data in our BigQuery warehouse to dashboard-ready tables with session and user data. To be specific, we'll use this website's analytics data tracked with [Snowplow](https://snowplow.io) and process it with one of [Snowplow's dbt packages](https://hub.getdbt.com/snowplow/). The dbt packages are great because we can leverage the standardised models that the Snowplow team has created and minimise our own efforts. In other words: we'll have more time for coffee! And not only time, but also money, as our solution will be extremely efficient with resources costing at most a few cents a day: perfect for a small business or blog.
 
 ## Setup
