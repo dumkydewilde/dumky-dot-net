@@ -383,6 +383,10 @@ If you haven't heard of dbt before, it's a tool that helps you define data model
 
 That may still sound like mumbo-jumbo, but what it has done is create an ecosystem of tools and packages that help you build meaningful models on top of your raw data from let's say Facebook Ads or Spotify to query them more easily. In this case we can use a dbt package called `snowplow_web` from Snowplow to create pageview and session tables for us.  The package takes care of all the aggregations like average time on page for pageviews or pages per session, that means that out of the box we can go from raw data to a bunch of tables to basically recreate reports around session, users and pageviews that you may be familiar with from Google Analytics.
 
+{{< box important >}}
+Before you continue please go to the [Cloud Run Jobs UI](https://console.cloud.google.com/run/jobs) on GCP and run the  `mutator-create-job` to create the initial table in BigQuery. This process is unfortunately not automated yet and has to run only once.
+{{< /box >}}
+
 ### Deploying a dbt Cloud Run Job through Terraform
 We brushed a bit over the setup of dbt in our workflow above, but in essence it is another container to run a little script called `run-dbt.sh` in our config folder.  The container is simply an image with Python 3.11 pre-installed so that we can easily download and install dbt.  Here's what that looks like in the Terraform `main.tf`.
 ```hcl
@@ -485,7 +489,7 @@ The derived tables are pretty self-explanatory, the scratch and manifest tables 
 And that's all folks. You have your session tables available, all ready for some fancy visualisations and showing off to your mom how your visitor chart is going up and to the right 📈! Of course the true value of this setup is not just in this data, but customising and combining this data with additional data sources like for example Google Search Console data.
 
 # Continuing the conversation
-This has been a massive post, it'd great if you could let me know if you enjoyed it, if you're missing anything or anything else you'd like to share. You can reach out to me on [LinkedIn](https://www.linkedin.com/in/dumkydewilde/) or [Twitter](https://www.twitter.com/dumkydewilde), but what would be even greater is to kindle the discussion on the [Snowplow Discourse](https://discourse.snowplow.io/) which is a great place to discuss everything Snowplow with a group of likeminded people.
+This has been a massive post, it'd great if you could let me know if you enjoyed it, if you're missing anything or anything else you'd like to share. You can reach out to me on [LinkedIn](https://www.linkedin.com/in/dumkydewilde/) or [Twitter](https://www.twitter.com/dumkydewilde), but what would be even greater is to kindle the discussion on the [Snowplow Discourse](https://discourse.snowplow.io/t/snowplow-for-0-02-day-with-terraform-dbt-docker-and-bigquery/8734) which is a great place to discuss everything Snowplow with a group of likeminded people.
 
 # Notes and Resources
 - Not seeing anything appear? Make sure you ran the `mutator-create-job` to create the initial table in BigQuery. I am still looking to improve this step.
