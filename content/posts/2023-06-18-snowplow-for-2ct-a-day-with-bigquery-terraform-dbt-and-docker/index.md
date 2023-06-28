@@ -113,6 +113,11 @@ Terraform is to cloud infrastructure what dbt is to data models. And if that sen
 
 Fear not. We are here today to guide you through setting up your own analytics pipeline infrastructure with Terraform. I'll assume that you have followed the [terraform install instructions](https://developer.hashicorp.com/terraform/tutorials/gcp-get-started/install-cli) for your system, have cloned the project repository with `git clone https://github.com/dumkydewilde/snowplow-serverless.git && cd snowplow-serverless`  and initialized the project with `terraform init`. Furthermore I will also assume that you have installed the [`gcloud` CLI](https://cloud.google.com/sdk/docs/downloads-interactive) because Terraform will use your local Google Cloud credentials to deploy the infrastructure when your run `terraform apply`.
 
+{{< box warning>}}
+Be aware that the setup you are about to implement will cost actual eurodollars or whatever your preferred currency is. We'll make it as small as
+possible, but if you try to run this on a large site with high volume continuous traffic, it can cost you and the [Snowplow Quickstart](https://docs.snowplow.io/docs/getting-started-on-snowplow-open-source/quick-start-aws/) might be a better fit or you can try and use Compute Engine spot instances for a better deal. For this site's 10-15K visits a month I pay 0.02-0.30 euros a day depending on traffic.
+{{< /box >}}
+
 
 ### Basic file and folder structure
 Now things get really interesting. Let's first look at some of these files and their purposes.
