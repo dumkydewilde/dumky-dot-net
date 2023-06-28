@@ -488,7 +488,6 @@ And that's all folks. You have your session tables available, all ready for some
 This has been a massive post, it'd great if you could let me know if you enjoyed it, if you're missing anything or anything else you'd like to share. You can reach out to me on [LinkedIn](https://www.linkedin.com/in/dumkydewilde/) or [Twitter](https://www.twitter.com/dumkydewilde), but what would be even greater is to kindle the discussion on the [Snowplow Discourse](https://discourse.snowplow.io/) which is a great place to discuss everything Snowplow with a group of likeminded people.
 
 # Notes and Resources
-
 - Not seeing anything appear? Make sure you ran the `mutator-create-job` to create the initial table in BigQuery. I am still looking to improve this step.
 - Google Cloud Hosting Options overview: https://cloud.google.com/hosting-options
 - https://cloud.google.com/storage/docs/access-logs
@@ -497,3 +496,4 @@ This has been a massive post, it'd great if you could let me know if you enjoyed
 - [Terraform Registry](https://registry.terraform.io/) is where you'll find documentation for most of the resources and [modules](https://registry.terraform.io/browse/modules) (pre-made combinations of resources)
 - You can basically only use Docker Hub images for Google Cloud Run unless you want to add them to your own artifact registry.  Github container registry (`ghcr.io` ) images, like the ones from dbt, are not supported.
 - You can have a look at the [final dashboard on Looker Studio](https://lookerstudio.google.com/reporting/4933e82f-b45f-4e53-a23f-955f820f7113).
+- I realised later that in making Snowplow more accessible with Cloud Run, the costs have 'significantly' increased from the original €0.02/day to sometimes 0.10-0.30/day. Cloud Run is way more expensive than the Compute Engine spot instances, so depending on your needs you may want to use those instead.
