@@ -14,7 +14,9 @@ description: "Running Snowplow for your (web) analytics pipeline to expensive? H
 
 With Google Analytics' sub-par performance over the last few years, you may have been on the lookout for alternatives or just overwhelmed with the amount of LinkedIn posts claiming to have the ultimate list of alternatives. In any case, many of us have stopped a moment to think: "What do I actually want from an analytics tool?" I don't know about you, but I want a cheap, customisable, self-hosted solution for my blog that is pleasant to work with. Let's see if we can use Snowplow for that!
 
-> ⚠️ Heads up for a little warning. This is going to be a long post as we'll cover a lot of ground. First of all It is basically simultaneously an introduction to (web) analytics infrastructure, infrastructure-as-code (Terraform) and data modelling with dbt. Feel free to skip back and forth between parts. Secondly, the €0.02 is only applicable to small blogs with intermittent traffic and intended as a way to play with the actual Snowplow pipeline setup. On large sites with continuous traffic, this setup will cost you more than default setup described in the Snowplow docs.
+{{< box important >}}
+Heads up for a little warning. This is going to be a long post as we'll cover a lot of ground. First of all It is basically simultaneously an introduction to (web) analytics infrastructure, infrastructure-as-code (Terraform) and data modelling with dbt. Feel free to skip back and forth between parts. Secondly, the €0.02 is only applicable to small blogs with intermittent traffic and intended as a way to play with the actual Snowplow pipeline setup. On large sites with continuous traffic, this setup will cost you more than default setup described in the Snowplow docs.
+{{< /box >}}
 
 ### What is covered
 In this post we'll cover the following topics (click if you'd like to skip ahead).
@@ -286,6 +288,58 @@ resource "google_cloud_run_v2_service" "collector_server" {
 }
 ```
 
+The other Cloud Run Jobs are quite similar but vary in the commands and arguments used, for example the enricher will take the default entrypoint (command),
+but we add in some arguments with configurations through the `args` variable:
+```hcl
+ containers {
+    image = "snowplow/snowplow-enrich-pubsub:latest-distroless"
+    args = [
+      "--config=${local.config_enricher}",
+      "--enrichments=${local.enrichments}",
+      "--iglu-config=${local.config_iglu_resolver}",
+    ]   
+    resources {
+      limits = {
+        cpu = "2"
+        memory = "1Gi"
+      }
+    }
+}
+```
+The enricher also has a bit more CPU and memory capacity as it is usually the part of the pipeline where most computation happens. You can play around with these settings if you like of course. Additionally you can see that the enricher takes a list of enrichments and passes them through to an 
+array in a template JSON file which in turn is base64 encoded:
+
+```hcl
+# enrichments
+campaign_attribution     = file("${path.module}/configs/enricher/campaign_attribution.json")
+anonymise_ip             = file("${path.module}/configs/enricher/anon_ip.json")
+referer_parser           = file("${path.module}/configs/enricher/referer_parser.json")
+javascript_enrichment    = templatefile("${path.module}/configs/enricher/javascript_enrichment.json.tmpl", {
+                                javascript_script = base64encode(file("${path.module}/configs/enricher/javascript_enrichment_script.js"))
+                            })
+
+enrichments_list = [
+    local.campaign_attribution,
+    local.anonymise_ip,
+    local.referer_parser,
+    local.javascript_enrichment
+]
+
+# enrichments to pass through to the enricher configuration:
+enrichments = base64encode(templatefile("${path.module}/configs/enricher/enrichments.json.tmpl", { enrichments = join(",", local.enrichments_list) }))
+```
+
+If you ever want to add or adjust some enrichments, you can fork the repository and easily add your enrichments to the enrichment list.
+
+{{< box important >}}
+Please note that you will see almost all your Cloud Run Jobs as *failed* in the UI. This is because they are supposed to be single tasks that 
+should exit with a success or failure. However, by default the Snowplow containers are intended to be always on processes. They will not exit by themselves
+because the process can not know when there are no more events in the pipeline to process. Hence the task instead times out and thus shows as failed, 
+even though it has not technically failed.
+{{< /box >}}
+
+
+
 ### Triggering and Scheduling Cloud Run
 The Cloud Run Service above has its own HTTP endpoint and will start when that's triggered, however all our other jobs have to be triggered independently. For that, and as a final step in our pipeline we use Google Cloud Scheduler. This is nothing more than a simple CRON job that runs every day between 8-21 at an interval of your choice, depending how 'real time' you'd like your analytics to be. The CRON job does however trigger an HTTP endpoint for our jobs ending in `:run` to indicate that they should start running.
 
@@ -329,8 +383,11 @@ We brushed a bit over the setup of dbt in our workflow above, but in essence it 
 ```hcl
 locals {
   dbt_run_script = base64encode(file("${path.module}/configs/dbt/run-dbt.sh"))
+  dbt_start_date = "${var.dbt_snowplow__start_date}"
+  dbt_snowplow__database = "${var.project_id}"
+  dbt_snowplow__atomic_schema = "${google_bigquery_dataset.bigquery_db.dataset_id}"
 }
- 
+
 resource "google_cloud_run_v2_job" "dbt_job" {
     name = "${var.prefix}-dbt-transform-job"
     location = var.region
@@ -359,10 +416,9 @@ resource "google_cloud_run_v2_job" "dbt_job" {
             command = [
                 "/bin/sh",
                 "-c",
-                "echo ${local.dbt_run_script} | base64 -d > run-dbt.sh && /bin/sh run-dbt.sh '${local.dbt_repo_url}' '${local.dbt_repo_folder_name}'"
+                "echo ${local.dbt_run_script} | base64 -d > run-dbt.sh && /bin/sh run-dbt.sh '${local.dbt_repo_url}' '${local.dbt_repo_folder_name}' '${local.dbt_snowplow__database}' '${local.dbt_snowplow__atomic_schema}' '${local.dbt_start_date}'"
             ]      
         }
-        max_retries = 1
       }
     }
 }
@@ -371,15 +427,17 @@ resource "google_cloud_run_v2_job" "dbt_job" {
 Most of it is the same as before, but there's two important parts:
 - We are adding in some variables as environment variables so that they can be accessed in our serverless cloud run job through the `env { ... }` parameters.
 - We add in a little configuration and setup script to run dbt in the container
+- we pass a few variables to our dbt project to make sure it uses the database and schema we created earlier
 
 The script is what does all the magic, it looks like this.
 ```bash 
+#!/bin/bash
 git clone "$1"
 cd "$2"
 pip install dbt-bigquery
 dbt debug
 dbt deps
-dbt run --selector snowplow_web
+dbt run --selector snowplow_web --vars "{snowplow__database: '$3',snowplow__atomic_schema: '$4',snowplow__start_date: '$5'}"
 ```
 
 What it does is that every time the job runs, it will take the first argument —that is a URL to a git repository—, copy it and move into the directory. By default it uses the [dbt repository in the `dbt` folder](https://github.com/dumkydewilde/snowplow-serverless/tree/main/dbt) of the Snowplow Serverless repository, but here's the nice thing: you can swap it out for your own, as we're just using Terraform variables again:
