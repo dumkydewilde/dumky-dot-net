@@ -45,7 +45,9 @@ locals {
     referer_parser           = file("${path.module}/configs/enricher/referer_parser.json")
     javascript_enrichment    = templatefile("${path.module}/configs/enricher/javascript_enrichment.json.tmpl", {
                                     javascript_script = base64encode(file("${path.module}/configs/enricher/javascript_enrichment_script.js"))
-                                })    
+                              })
+    event_fingerprint_config = file("${path.module}/configs/enricher/event_fingerprint_config.json")         
+    header_enrichment        = file("${path.module}/configs/enricher/header_enrichment.json")                               
     yauaa_enrichment         = file("${path.module}/configs/enricher/yauaa_enrichment.json")                  
 
     enrichments_list = [
@@ -53,6 +55,8 @@ locals {
         local.anonymise_ip,
         local.referer_parser,
         local.javascript_enrichment,
+        local.event_fingerprint_config,
+        local.header_enrichment,
         local.yauaa_enrichment
     ]
 }
