@@ -1,0 +1,103 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description" : "Cloudflare provides additional information about the request in the headers. Some of this is available by default, some if can be added through Cloudflare Workers, like the 'IncomingRequestCfProperties' object.",
+  "self": {
+    "vendor": "com.dumky.net",
+    "name": "cloudflare_header_context",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {    
+    "connectingIP": {
+      "type": ["string", "null"],
+      "description": "CF-Connecting-IP provides the client IP address connecting to Cloudflare to the origin web server. This header will only be sent on the traffic from Cloudflare's edge to your origin web server."
+    },
+    "worker": {
+      "type": ["string", "null"],
+      "description": "The CF-Worker request header is added to an edge Worker subrequest that identifies the host that spawned the subrequest."
+    },
+    "ray": {
+      "type": ["string", "null"],
+      "description": "The CF-ray header (otherwise known as a Ray ID) is a hashed value that encodes information about the data center and the visitor's request. For example: CF-RAY: 230b030023ae2822-SJC. Add the CF-Ray header to your origin web server logs to match requests proxied to Cloudflare to requests in your server logs."
+    },
+    "visitor": {
+      "type": ["string", "null"],
+      "description": "Currently, this header is a JSON object, containing only one key called \"scheme\". The header will be either HTTP or HTTPS, and it is only relevant if you need to enable Flexible SSL in your Cloudflare settings. For example: CF-Visitor: { \"scheme\":\"https\"}."
+    },
+    "botManagementVerifiedBot": {
+      "type": ["string", "null"],
+      "description": "A boolean value that is true if the request comes from a good bot, like Google or Bing."
+    },
+    "botManagementScore": {
+      "type": ["string", "null"],
+      "description": "An integer between 1-99 that indicates Cloudflare’s level of certainty that a request comes from a bot."
+    },
+    "botManagementStaticResource": {
+      "type": ["string", "null"],
+      "description": "An identifier that matches file extensions for many types of static resources."
+    },
+    "botManagementJa3Hash": {
+      "type": ["string", "null"],
+      "description": "A JA3 Fingerprint helps you profile specific SSL/TLS clients across different destination IPs, Ports, and X509 certificates."
+    },
+    "botManagementDetectionIds": {
+      "type": ["string", "null"],
+      "description": "List of IDs that correlate to the Bot Management heuristic detections made on a request."
+    },
+    "asn": {
+      "type": ["string", "null"],
+      "description": "ASN of the incoming request, for example, 395747."
+    },
+    "asOrganization": {
+      "type": ["string", "null"],
+      "description": "The organization which owns the ASN of the incoming request, for example, Google Cloud."
+    },
+    "colo": {
+      "type": ["string", "null"],
+      "description": "The three-letter IATA airport code of the data center that the request hit, for example, 'DFW'"
+    },
+    "country": {
+      "type": ["string", "null"],
+      "description": "Country of the incoming request. The two-letter country code in the request. This is the same value as that provided in the CF-IPCountry header, for example, \"US\""
+    },
+    "isEUCountry": {
+      "type": ["string", "null"],
+      "description": "If the country of the incoming request is in the EU, this will return \"1\". Otherwise, this property will be omitted."
+    },
+    "httpProtocol": {
+      "type": ["string", "null"],
+      "description": "HTTP Protocol, for example, \"HTTP/2\"."
+    },
+    "city": {
+      "type": ["string", "null"],
+      "description": "City of the incoming request, for example, \"Austin\"."
+    },
+    "continent": {
+      "type": ["string", "null"],
+      "description": "Continent of the incoming request, for example, \"NA\"."
+    },
+    "postalCode": {
+      "type": ["string", "null"],
+      "description": "Postal code of the incoming request, for example, \"78701\"."
+    },
+    "metroCode": {
+      "type": ["string", "null"],
+      "description": "Metro code (DMA) of the incoming request, for example, \"635\"."
+    },
+    "region": {
+      "type": ["string", "null"],
+      "description": "If known, the ISO 3166-2 name for the first level region associated with the IP address of the incoming request, for example, \"Texas\"."
+    },
+    "regionCode": {
+      "type": ["string", "null"],
+      "description": "If known, the ISO 3166-2 code for the first-level region associated with the IP address of the incoming request, for example, \"TX\"."
+    },
+    "timezone": {
+      "type": ["string", "null"],
+      "description": "Timezone of the incoming request, for example, \"America/Chicago\"."
+    }
+  },
+  "additionalProperties": true
+
+}

@@ -43,18 +43,59 @@ function processTrafficQuality(event) {
   return {
     schema: 'iglu:com.dumky.net/traffic_quality_context/jsonschema/1-0-0',
     data: {
-      known_bot: isKnownBot,
-      known_crawler: isKnownCrawler,
-      known_cloud_provider_ip: undefined,
-      low_quality_referrer: undefined
+      "known_bot": isKnownBot,
+      "known_crawler": isKnownCrawler,
+      "known_cloud_provider_ip": undefined,
+      "low_quality_referrer": undefined
     }
   }
 } 
 
-
+function processCloudflareHeaders(headers) {
+  return {
+    schema: 'iglu:com.dumky.net/cloudflare_header_context/jsonschema/1-0-0',
+    data: {
+      "worker" : headers["cf-worker"],
+      "ray" : headers["cf-ray"],
+      "visitor" : headers["cf-"],
+      "botManagementVerifiedBot" : headers["cf-bot-management-verified-bot"],
+      "botManagementScore" : headers["cf-bot-management-score"],
+      "asn" : headers["cf-asn"],
+      "asOrganization" : headers["cf-as-organization"],
+      "colo" : headers["cf-colo"],
+      "country" : headers["cf-country"],
+      "isEUCountry" : headers["cf-is-eu-country"],
+      "city" : headers["cf-city"],
+      "continent" : headers["cf-continent"],
+      "postalCode" : headers["cf-postal-code"],
+      "metroCode" : headers["cf-metro-code"],
+      "region" : headers["cf-region"],
+      "regionCode" : headers["cf-region-code"],
+      "timezone" : headers["cf-timezone"]
+    }
+  }
+}
 
 function process(event) {
     let contexts = []
+    const entities = JSON.parse(event.getDerived_contexts());
+
+    if (entities) {
+      let headers = {};
+      entities.data.forEach((entity) => { 
+        if (entity.schema.startsWith('iglu:org.ietf/http_header/jsonschema/1-0-0')) {
+          headers[entity.data.name] = entity.data.value;
+        }
+      })
+      if (headers['cf-country']) { 
+        contexts.push(processCloudflareHeaders(headers))
+        event.setGeo_country(headers['cf-country'] || '')
+        event.setGeo_region(headers['cf-region-code'] || '')
+        event.setGeo_city(headers['cf-city'] || '')
+        event.setGeo_zipcode(headers['cf-postal-code'] || '')
+        event.setGeo_region_name(headers['cf-region'] || '')
+      }
+    }
 
     contexts.push(processTrafficQuality(event))
 

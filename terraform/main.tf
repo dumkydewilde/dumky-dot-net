@@ -84,7 +84,7 @@ resource "google_storage_bucket_iam_member" "member" {
 }
 
 resource "google_storage_bucket_object" "schemas" {
-  for_each      = fileset("${path.module}/schemas/", "**")
+  for_each      = fileset("${path.module}/schemas/", "**/[0-9]-[0-9]-[0-9]")
   source        = "${path.module}/schemas/${each.value}"
   name          = "schemas/${each.value}"
   content_type  = "text/plain"
