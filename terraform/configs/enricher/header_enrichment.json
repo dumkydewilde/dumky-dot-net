@@ -5,7 +5,7 @@
         "vendor": "com.snowplowanalytics.snowplow",
         "enabled": true,
         "parameters": {
-            "headersPattern": "cf-*"
+            "headersPattern": "cf-.*"
         }
     }
 }
