@@ -285,7 +285,7 @@ resource "google_cloud_run_v2_job" "mutator_create_job" {
         timeout = local.job_timeout
         service_account = google_service_account.cloud_run_sa.email
         containers {
-            image = "snowplow/snowplow-bigquery-mutator:latest-distroless"
+            image = "snowplow/snowplow-bigquery-mutator:1.7.0-distroless"
             args = [
               "create", 
               "--config=${local.config_loader}",
@@ -314,7 +314,7 @@ resource "google_cloud_run_v2_job" "mutator_listen_job" {
         timeout = local.job_timeout
         service_account = google_service_account.cloud_run_sa.email
         containers {
-            image = "snowplow/snowplow-bigquery-mutator:latest-distroless"
+            image = "snowplow/snowplow-bigquery-mutator:1.7.0-distroless"
             args = [
               "listen", 
               "--config=${local.config_loader}",
@@ -342,7 +342,7 @@ resource "google_cloud_run_v2_job" "streamloader" {
         timeout = local.job_timeout
         service_account = google_service_account.cloud_run_sa.email
         containers {
-            image = "snowplow/snowplow-bigquery-streamloader:latest"
+            image = "snowplow/snowplow-bigquery-streamloader:1.7.0-distroless"
             args = [
               "--config=${local.config_loader}",
               "--resolver=${local.config_iglu_resolver}",
@@ -371,7 +371,7 @@ resource "google_cloud_run_v2_job" "repeater" {
         timeout = local.job_timeout
         service_account = google_service_account.cloud_run_sa.email
         containers {
-            image = "snowplow/snowplow-bigquery-repeater:latest-distroless"
+            image = "snowplow/snowplow-bigquery-repeater:1.7.0-distroless"
             args = [
               "--config=${local.config_loader}",
               "--resolver=${local.config_iglu_resolver}",
@@ -414,6 +414,12 @@ resource "google_cloud_run_v2_job" "dbt_job" {
             # unfortunately GCP doesn't allow use to pull the dbt image from ghcr.io directly
             # So we use a base python image and just install dbt-bigquery on it 
             image = "python:3.11"
+            resources {
+            limits = {
+              cpu    = "4"
+              memory = "2Gi"
+            }
+          }
             env {
               name = "BQ_DATASET"
               value = "${google_bigquery_dataset.bigquery_db.dataset_id}"
