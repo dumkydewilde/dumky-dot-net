@@ -9,7 +9,7 @@ tags:
 description: "Google Tag Manager makes it incredibly easy to add marketing tags to your site. From registering ads conversions and transactions to sophisticated tags that segment users based on the weather in their current location, you can go crazy without having to go back to your development team every time. But that doesn't mean you should do it all. While your dev and SEO teams are working hard to reach their pagespeed goals all the marketeers are having a proverbial party in their yard. Here you'll find a few tips to keep your GTM container lean and fast."
 ---
 
-_UPDATE: with the [GTM server-side release](https://www.dumkydewilde.nl/2020/08/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) I've added a [section](#8-server-side-tagging) on server-side tagging_
+_UPDATE: with the [GTM server-side release](/posts/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) I've added a [section](#8-server-side-tagging) on server-side tagging_
 
 _UPDATE 2: There's a [number 9](#9-bonus-using-a-caching-proxy-to-load-gtm) that shows you how to serve GTM through a caching proxy to increase performance_
 
@@ -19,7 +19,7 @@ Google Tag Manager makes it incredibly easy to add marketing tags to your site. 
 
 ### 1\. Use a (custom) template
 
-Tag manager provides a lot of standard tag templates like the Google Analytics tag or the Hotjar tag, but recently they've enabled you to [create your own template](https://www.dumkydewilde.nl/2019/06/gtm-custom-templates-how-to-think-about-building-your-own/). This not only helps in terms of a more convenient interface for working with tags and added security benefits, but there is also a performance benefit here. Every time you use a custom HTML tag instead of a template tag the GTM script will have to go through your page again insert the script and evaluate the actual script. A template on the other hand is inserted at the same time as the GTM script itself.
+Tag manager provides a lot of standard tag templates like the Google Analytics tag or the Hotjar tag, but recently they've enabled you to [create your own template](/posts/gtm-custom-templates-how-to-think-about-building-your-own/). This not only helps in terms of a more convenient interface for working with tags and added security benefits, but there is also a performance benefit here. Every time you use a custom HTML tag instead of a template tag the GTM script will have to go through your page again insert the script and evaluate the actual script. A template on the other hand is inserted at the same time as the GTM script itself.
 
 ### 2\. Asynchronous everything
 
@@ -81,7 +81,7 @@ It's easy to not fire tags on every page, but did you know that variables are ca
 
 Yes, here's captain obvious again, but tell me, for how many containers do you have a process in place for adding and removing tags? Over time tags will accumulate and leave their waste (unused variables) behind when they're removed again. Proper documentation and a decision process for adding and removing tags will help you remove that dead weight. For example set a time limit on campaign tags by using the _'custom tag firing schedule'_ in the advanced settings of your tag.
 
-If you do have a lot of tags in your container and you're unsure which ones are actually still necessary and which ones are dead weight, consider using the free tool that I built specifically for this purpose called [GTM Export Tools](https://gtm-export-tools.web.app/). It allows you to take an export of your GTM container and with one click remove all triggers and variables that are not actually in use anymore. If you're interested to see which tags are actually not in use anymore or are slow to run, consider building a [GTM Tag Monitoring solution](https://www.dumkydewilde.nl/2020/07/building-a-complete-tag-monitoring-solution-for-google-tag-manager/).
+If you do have a lot of tags in your container and you're unsure which ones are actually still necessary and which ones are dead weight, consider using the free tool that I built specifically for this purpose called [GTM Export Tools](https://gtm-export-tools.web.app/). It allows you to take an export of your GTM container and with one click remove all triggers and variables that are not actually in use anymore. If you're interested to see which tags are actually not in use anymore or are slow to run, consider building a [GTM Tag Monitoring solution](/posts/building-a-complete-tag-monitoring-solution-for-google-tag-manager/).
 
 ## Learn from the best: what your development team does to keep things running smooth
 
@@ -107,7 +107,7 @@ Minification is often combined with bundling. Every separate script means a new 
 
 ### Google Tag Manager Server-side
 
-With the release of [GTM Server-side](https://www.dumkydewilde.nl/2020/08/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) you now have the option of off-loading a lot of your tags to your server instead of sending it through the user's browser. Tools like Segment have been doing this for a long time, but the basic principle is this. Instead of sending hits to every advertising and analytics platform with every user interaction, you only send that hit once to your "own" tagging server and on that server you have your own logic to decide how you want to distribute the information from that hit.
+With the release of [GTM Server-side](/posts/why-googles-new-gtm-server-side-tagging-solution-is-a-big-win-win-for-both-your-website-and-google/) you now have the option of off-loading a lot of your tags to your server instead of sending it through the user's browser. Tools like Segment have been doing this for a long time, but the basic principle is this. Instead of sending hits to every advertising and analytics platform with every user interaction, you only send that hit once to your "own" tagging server and on that server you have your own logic to decide how you want to distribute the information from that hit.
 
 So you send a button click event to your server with both a Google and a Facebook identifier and on your server you send a `buttonClick` event to Google with the relevant identifier as well as a `buttonClick` event to Facebook with the Facebook identifier. The performance benefit here is two-fold: you don't have to load the Facebook and Google libraries on your site _and_ your sending only one request from the user's browser.
 

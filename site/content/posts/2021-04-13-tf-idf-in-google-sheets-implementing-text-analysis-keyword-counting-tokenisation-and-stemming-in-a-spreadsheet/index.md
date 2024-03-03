@@ -10,7 +10,7 @@ tags:
 description: "Google Sheets, the online Excel alternative, is basically the Swiss army knife of any modern knowledge worker. We're adding to it's multitude of uses and abuses today by creating a custom Tf-Idf model _in_ Google Sheets. A Tf-Idf model can help us digest large quantities of text like reviews, comments, feedback, chat histories, and even 17th century philosophy books with ease."
 ---
 
-Google Sheets, the online Excel alternative, is basically the Swiss army knife of any modern knowledge worker. We're adding to it's multitude of uses and abuses today by creating a custom Tf-Idf model _in_ Google Sheets. A Tf-Idf model can help us digest large quantities of text like reviews, comments, feedback, chat histories, and even [17th century philosophy books](https://www.dumkydewilde.nl/2017/11/a-visual-leviathan-hobbes-schizophrenic-writing/) with ease.
+Google Sheets, the online Excel alternative, is basically the Swiss army knife of any modern knowledge worker. We're adding to it's multitude of uses and abuses today by creating a custom Tf-Idf model _in_ Google Sheets. A Tf-Idf model can help us digest large quantities of text like reviews, comments, feedback, chat histories, and even [17th century philosophy books](/posts/a-visual-leviathan-hobbes-schizophrenic-writing/) with ease.
 
 ![](images/Screenshot-2021-04-13-at-20.57.00-1024x427.png)
 
