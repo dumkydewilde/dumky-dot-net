@@ -8,8 +8,12 @@ tags:
   - "puppeteer"
   - "testing"
   - "browser_automation"
+  - playwright
 description: "Testing your analytics setup regularly can help you prevent uncomfortable situations with your boss or client when there's been another change on the site and suddenly all your campaigns and goals have zero conversions. We will look at how to test the actual requests that are being sent to Google Analytics, Facebook, or any other place you have your tags pointed at."
 ---
+{{< box important >}}
+While the general idea of this post is still very much relevant. I'd recommend using [Playwright](https://playwright.dev) instead of Puppeteer. It is much better maintained and documented and has support for all major browsers. Check out [my post on using it to check cookie consent](/posts/check-cookie-consent-with-playwrights-browser-automation-in-python/) to get an idea of how Playwright works.
+{{< /box >}}
 
 Testing your analytics setup regularly can help you prevent uncomfortable situations with your boss or client when there's been another change on the site and suddenly all your campaigns and goals have zero conversions. I [recently wrote about testing your analytics setup with Cypress](https://www.dumkydewilde.nl/2020/04/analytics-and-tag-testing-with-cypress/) as part of the development process. This time however, we will look at how to test the actual requests that are being sent to Google Analytics, Facebook, or any other place you have your tags pointed at.
 

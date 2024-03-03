@@ -10,6 +10,9 @@ tags:
   - "browser_automation"
 description: "There's nothing like watching 20 browser windows pop-up on your screen to make you feel like a proper hacker. Let's write a Python script to do GDPR consent checks with Playwright and detect the consent manager, cookies set, and marketing and analytics trackers on a site." 
 ---
+{{< box important >}}
+If you enjoy this post. I've developed an easy [package called 'consentcrawl'](https://github.com/dumkydewilde/consentcrawl/) to run a quick check on your site doing nothing more than running `consentcrawl <<my-site.com>>` in your terminal.
+{{< /box >}}
 There's nothing like watching 20 browser windows pop-up on your screen to make you feel like a proper hacker. So I always grab on to any excuse for a browser automation project. In this case we'll be writing a Python script to do a GDPR consent check with [Microsoft's Playwright](https://playwright.dev/python/) for multiple URLs at the same time. After we're done we should be able to:
 - detect which consent manager is used
 - which cookies are set before and after consent
