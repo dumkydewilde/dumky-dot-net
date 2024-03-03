@@ -14,10 +14,10 @@ Tijd dus om zelf aan de slag te gaan. De [motion coprocessor](https://en.wikiped
 
 De eerste toont de intensiteit per uur op de dag/dag van de week:
 
-[![steps_2015_dayofweek](images/steps_2015_dayofweek-1024x512.png)](http://www.dumkydewilde.nl/wp-content/uploads/2016/02/steps_2015_dayofweek.png)
+![steps_2015_dayofweek](images/steps_2015_dayofweek-1024x512.png)
 
 Zoals te zien zijn er maandag tot en met donderdag een duidelijke banen te onderscheiden bij de spitstijden. De zondag is wat actiever met waarschijnlijk wat vaker sporten en op de fiets naar vrienden. Datzelfde geldt voor eten buiten de deur op zaterdagavonden, met af en toe wat latertjes in de nacht van zaterdag op zondag. Al met al een redelijk doorsnee leven. Door naar het jaaroverzicht.
 
-[![steps_2015_hour_week](images/steps_2015_hour_week-1024x576.png)](http://www.dumkydewilde.nl/wp-content/uploads/2016/02/steps_2015_hour_week.png)
+![steps_2015_hour_week](images/steps_2015_hour_week-1024x576.png)
 
 Hier zien we per week/uur van de dag de activiteit. Ook hier zijn wel de 'spits-stroken' te herkennen, maar worden die waarschijnlijk toch veel vertroebeld door onregelmatigheden in de weekenden. Het eerste wat opvalt is de uitschieter in week 14 en 15: vakantie. Wilde nachten? Nee, een andere tijdszone, iets waar ik niet voor gecorrigeerd heb. Het tweede interessante vinden we in de avond van week 3. Wat deed ik voor extreem actiefs in die week? Simpel, een hardloopwedstrijd. Wederom, geen spannend nachtleven, maar een redelijk normaal patroon. Ik had ook eigenlijk niet heel anders verwacht, ik ken mezelf ondertussen.

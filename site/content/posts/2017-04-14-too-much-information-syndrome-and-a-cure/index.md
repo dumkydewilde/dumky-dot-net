@@ -10,7 +10,7 @@ description: "Humans are built to distinguish signal from noise. We have a gener
 
 I believe we are built to distinguish signal from noise. It’s not just the fake news on Facebook, the hipsters on Instagram, or the kittens on YouTube that we are able to filter out (or not…). It is a general ability to, in an instant, understand what is important and what is not. Despite the fact that in recent years the all-encompassing interwebs has created a collective attention deficit disorder, our ability to distinguish signal from noise has not changed. It’s just that there’s more noise and more signal. It’s not something just humans do —though, yes, you are special, but I’ll get to that later. It’s an ability a lot of animals have when we say they can smell fear, or hear danger coming. That ability to filter out the noise has helped us survive for millions of years. I think we can use it even more and even better.
 
-[![Too much information - A crowd with signs](images/20170414-too-much-information-protest-crowd-1024x576.png)](http://www.dumkydewilde.nl/wp-content/uploads/2017/04/20170414-too-much-information-protest-crowd.png)
+![Too much information - A crowd with signs](images/20170414-too-much-information-protest-crowd-1024x576.png)
 
 So what do I mean? What’s this weird stuff about animals on Facebook? Sit still and listen. What do you hear? Voices outside? A washing machine? The kettle? Cars? Noises? Sit still and look? What do you see? A table? Your hands? Your shirt? The colours and the fabric it’s made of? The little threads? There is so much to see, so much input. Yet most of the time we have little or no problem navigating the millions of stimuli that are thrust upon us. We know exactly what’s important and what’s not. That’s what I mean. Think of the story of the tortoise and the hare. The hare is a lot faster, so he sees more right? But what if the tortoise takes more time to really look closely? Doesn’t she see more than the hare because she has more time to see? We as humans have the unique ability to be both the tortoise and the hare. We can choose whether we want to focus intensely on one thing or go fast and see a little of a lot.
 
@@ -38,7 +38,7 @@ Visual abstractions are interesting because they bridge the mental and the visua
 2. _Comparison_: This can be a contrast like black and white, or before and after, or it can be something like three alternatives, but the power is in showing the differences.
 3. _Systems_: A system can be a simple interaction between elements, or a complex set of second order effects. The power of visualising a system is that it can show interaction and change without necessarily using a linear fashion like a process
 
-[![](images/20170414-process-comparison-system-1-1024x492.png)](http://www.dumkydewilde.nl/wp-content/uploads/2017/04/20170414-process-comparison-system-1.png)
+![](images/20170414-process-comparison-system-1-1024x492.png)
 
 Thirdly, algorithms are interesting because they do a lot of the work for us. They are a tool for condensing information in a way that helps us make more sense of it. In it simplest form it can be something like sorting a list in chronological order. A little more complex is a linear regression which helps us see a pattern in what might otherwise look like noise. At it’s most complex, when we employ multiple neural networks for example, only the outcome is meaningful to us.
 

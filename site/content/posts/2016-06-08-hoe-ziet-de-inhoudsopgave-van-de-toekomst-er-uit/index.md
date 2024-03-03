@@ -7,7 +7,7 @@ tags:
     - "content"
 ---
 
-[![Plinius the Elder quote](images/quote-plinius-the-elder.png)](http://www.dumkydewilde.nl/wp-content/uploads/2016/06/quote-plinius-the-elder.png)
+![Plinius the Elder quote](images/quote-plinius-the-elder.png)
 
 Er moet een moment zijn geweest dat iemand aan het schrijven was en dacht: “Hmm, dit wordt wel erg lang, misschien kan ik vooraan de structuur opschrijven, zodat mensen door de tekst kunnen navigeren.” Ik vind dat fascinerend. Want wanneer komt het punt dat je denkt: “Dit is te veel informatie?” Ik zie een inhoudsopgave als een instrument om de informatie in een tekst op een andere manier te ontsluiten. De inhoudsopgave is een manier van kijken naar de tekst, een perspectief [zoals ik dat laatst beschreef](/posts/feiten-spreken-niet-voor-zichzelf-perspectieven-in-visuele-communicatie/). Het geeft dezelfde informatie op een andere manier weer, en sterker nog, het geeft je de mogelijkheid om de tekst beter te begrijpen, of juist alleen die stukken te lezen die voor jou interessant zijn. Dat laatste is ook de motivatie voor een van de eerste inhoudsopgaven, opgetekend door Plinius de oudere:
 

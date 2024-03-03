@@ -21,7 +21,7 @@ Voor vraag 1 heb ik gekozen om uit te gaan van [de top 500 van Alexa.com](http:/
 
 De volgende stap is iets lastiger. We willen weten welke tools per site gebruikt worden. De meeste tools analyseren bezoekersgedrag uit via een javascript. Gelukkig voor ons is dat bijna altijd hetzelfde en [is dat proces goed te automatiseren](https://github.com/dumkydewilde/marketing_tools/blob/master/om_tools_analysis.ipynb). De kern van het verhaal is dat we voor een selectie van tools kijken of ze worden aangeroepen in de broncode van de betreffende site. Wat volgt is onderstaand resultaat.
 
-[![Een overview van de meest gebruikte marketing tools op Nederlandse websites](images/online_marketing_tools_2016-1-1024x576.png)](http://www.dumkydewilde.nl/wp-content/uploads/2016/07/online_marketing_tools_2016-1.png)
+![Een overview van de meest gebruikte marketing tools op Nederlandse websites](images/online_marketing_tools_2016-1-1024x576.png)
 
 We zien, zoals verwacht, dat Google Analytics ons overal volgt. Alleen een aantal overheidssites (o.a. Belastingdienst.nl en Rijksoverheid.nl) gebruiken Piwik, en een aantal banken gebruiken hun eigen tracking scripts. Wat ik niet helemaal had verwacht was dat New Relic vervolgens op de tweede plek zou staan. Interessant genoeg doet New Relic namelijk iets heel anders dan bijvoorbeeld Optimizely, dat op de derde plaats volgt. Waar New Relic meer gericht is op het monitoren van performance zit Optimizely meer op het optimaliseren door bijvoorbeeld A/B-testen. Dat sluit niet uit dat sommige sites ook beide tools gebruiken, en dat zien we ook terug in de data.
 
