@@ -9,7 +9,10 @@ paginate = 10
 
 [params]
     author = "Dumky de Wilde"
-    description = ""
+    description = """Hi! I'm Dumky, author of [The Fundamentals of Analytics Engineering](https://amzn.to/43KxIik). I write about mostly technical topics related to analytics and data. 
+        """
+    promoImageSrc = "/dumky-de-wilde-fundamentals-of-analytics-engineering.jpg"
+    promoImageLink = "https://amzn.to/43KxIik"
     avatar = "/turtle.svg"
     menu_item_separator = "|"
     gtm_id = "GTM-WP7XMQL"

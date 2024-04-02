@@ -3,7 +3,7 @@ title: "About"
 date: "2023-02-13"
 ---
 
-Hey! I'm Dumky, analytics engineer.  I've spent the first half of my working life in web analytics turning Google Tag Manager (GTM) inside out. Nowadays I spend most of my time dusting off old data models and scrubbing ingestion pipelines clean in distributed data platforms.
+Hey! I'm Dumky, analytics engineer. I've spent the first half of my working life in web analytics turning Google Tag Manager (GTM) inside out. Nowadays I spend most of my time dusting off old data models and scrubbing ingestion pipelines clean in distributed data platforms. I am the author of [The Fundamentals of Analytics Engineering](https://amzn.to/43KxIik) together with some of my colleagues from Xebia Data. The book is a great way to familiarize yourself with the many topics involved in analytics engineering, from extracting and loading data, to governance, data modelling and data quality.
 
 # Start here
 If you're interested in some of my top and favourite posts, here are a few to get you started.
