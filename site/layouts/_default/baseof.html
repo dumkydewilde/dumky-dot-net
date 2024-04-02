@@ -72,7 +72,6 @@
         {{- end }}
       </nav>
       {{- end }}
-      <p>{{ .Site.Params.description }}</p>
       {{- with .Site.Params.social }}
       <div class="app-header-social">
         {{ range . }}
@@ -81,6 +80,12 @@
             <i class="fa fa-{{ .subset }} fa-{{ .icon }}"></i>
           </a>
         {{ end }}
+      </div>
+      {{- end }}
+      <div class="app-header-description">{{ .Site.Params.description | markdownify }}</div>
+      {{- if (gt (.Site.Params.promoImageSrc | len) 0) }}
+      <div class="app-header-promo">
+        <a href="{{ .Site.Params.promoImageLink }}"><img src="{{ .Site.Params.promoImageSrc }}" width="200"/></a>
       </div>
       {{- end }}
     </header>

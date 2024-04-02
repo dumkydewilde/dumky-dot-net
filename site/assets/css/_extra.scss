@@ -91,12 +91,45 @@ html {
     transform: scaleX(-1);
   }
 
+  .app-header-description {
+    font-style: italic;
+    padding: 1em 0;
+  }
+
+  // SMALL SCREENS / PHONES
   @media screen and (max-width: 992px) {
+    .app-header {
+        margin: 0;
+        padding: 1em 2em;
+        font-size: 0.9em;
+        width: 100%;      
+        text-align: right;
+        font-size: 0.8em;
+      }
+
+
     .app-header-avatar {
       float: left;
     }
-    .app-header {
-        font-size: 0.9em;
+
+    .app-header-description {
+      padding-left: 1em;
+    }
+
+    .app-header-promo img {
+        display: none;
+    }
+
+    .app-header h1, .app-header h2.sub-title {
+        margin: 0 !important;
+    }
+    .app-header h2.sub-title:after {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .app-container {
+        padding-top: 0;
     }
   }
 
