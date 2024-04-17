@@ -171,11 +171,11 @@ into the data world, this means having visual insights into the data dependencie
 dashboard, as well as any errors, anomalies, or data quality issues, and being able to monitor where
 and when they appear.
 
-I quite like the definition from Yuliia Tkachova from the data observability company [Masthead](https://mastheadata.com) defines data observability
-as “the ability of an organization to track and control its data landscape and multilayer data
-dependencies (pipelines, infrastructure, applications) at all times […] with the goal of detecting,
-preventing, controlling, and remediating data outages or any other issues disrupting the work of
-the data system or spoiling data quality and reliability.”
+I quite like the definition from Yuliia Tkachova from the data observability company [Masthead](https://mastheadata.com).
+She defines data observability as: 
+> “the ability of an organization to track and control its data landscape and multilayer data dependencies (pipelines, 
+  infrastructure, applications) at all times […] with the goal of detecting, preventing, controlling, and remediating 
+  data outages or any other issues disrupting the work of the data system or spoiling data quality and reliability.”
 
 Any observability solution, whether consisting of one or multiple tools, will need the following features:
 
