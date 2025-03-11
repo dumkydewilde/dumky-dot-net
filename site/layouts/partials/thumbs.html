@@ -13,12 +13,7 @@
         const currentState = localStorage.getItem(`rating-${pageData.pageId}`,"")
 
         if (currentState !== rating) {
-            icet('trackStructEvent', {
-            category: 'rating',
-            action: `thumbs-${rating}`,
-            property: pageData.pageId
-            });
-
+            umami.track(`rating-thumbs-${rating}`, { page_id: pageData.pageId });
             localStorage.setItem(`rating-${pageData.pageId}`, rating)
         } 
 
