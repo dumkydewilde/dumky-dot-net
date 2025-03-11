@@ -18,9 +18,8 @@
 
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>
     
-    {{ if .Site.Params.snowplow_endpoint}}{{- partial "snowplow.html" . }}{{ end }}
+    {{- partial "webtracking.html" . }}
 
-    {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
 
